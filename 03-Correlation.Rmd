@@ -519,3 +519,107 @@ ___
 
 How to do it in JAMOVI
 
+## CogStat
+
+### Goals
+
+- Run correlations in CogStat
+
+- Understand the meaning of the results
+
+
+In this chapter, we will run correlations with CogStat and interpret what we see in the output. We will also take a look at the regression line. For this, we will use data from “The World Happiness Report” (https://worldhappiness.report/), which can be found in the dataset “WHR2018”. The dataset contains responses to a questionnaire about happiness from around the world.
+
+Correlation can be computed between any two ordinal or interval variables. When we run a correlation, we would like to know something about the relations between two variables. In CogStat, this matter can be investigated with the  “Explore relations of variable par” analysis.
+
+### Does a country's measure for “Freedom to make life choices” correlate with that country's measure for "Confidence in national government"?
+
+First, load into CogStat and then take a look at the “WHR2018” dataset. You should be able to see that there are data for many different countries across different years. There are lots of different kinds of measures, and each is given a name.
+
+In CogStat, to look at the relations between the variables “Freedom to make life choices” and "Confidence in national government" we select the“Explore relations of variable pair” analysis (or press Ctrl + 2).
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch3/variablepair.png')
+```
+or
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch3/variablepair2.png')
+```
+
+Choose the variables “Freedom to make life choices” and “Confidence in national government” as “Selected variables” and press “OK”.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch3/variablepair3.png')
+```
+
+If you take a look at the top of the output, you will see the “Raw data” section, in which there is a scatterplot with the data points of our two variables. 
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch3/vpraw.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch3/vpscatter.png')
+```
+
+This section also shows that 1395 pairs could be observed, and 167 pairs count as missing information. Data points with missing values are automatically excluded from the scatterplot, as they cannot be graphed. The scatterplot shows us that if the freedom to make life choices increases, then the confidence in the national government increases, too. This visual inspection suggests a positive correlation.
+
+You can find a quantified measure of the relation at the end of the Population Properties section of the results. It shows that this correlation is very weak and not significant. (rs(119) = 0.17, p = .057) The results are displayed in APA format.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch3/corrhip.png')
+```
+
+### What is the relationship between positive affect and negative affect in a country?
+
+It is quite an interesting question, and we probably guess, that it could be a negative correlation here: When positive feelings generally go up, should not negative feelings generally go down? To find out, select “Explore relations of variable pair” analysis from the toolbar or from the Analysis menu. Choose “Positive affect” and “Negative affect” as “Selected variables”, then press “OK”.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch3/vpposnegeff.png')
+```
+
+At the top of the output, you can see the “Raw data” first, with a scatterplot.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch3/vpposnegeff2.png')
+```
+
+If we scroll lower, in the Sample properties, we can see this scatterplot with a line (the linear regression line), that shows us whether the regressor line goes up or down. The direction of the regressor line corresponds to whether the correlation is positive or negative between our two variables. Since here the regressor line goes downwards, that means, that the correlation is negative.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch3/vpposnegeff3regrline.png')
+```
+
+Moreover, we can take a look at the values of Pearson’s and Spearman’s correlations (result: Pearson's correlation: r(1540) = -0.38, p < .001). This means that there is a negative, weak, and significant (if p<0.05 = the test is significant) correlation between the variables “Negative affect” and “Positive affect”.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch3/standardes.png')
+```
+
+Overall, these results mean, what we already guessed when we started to solve this task. As there is more positive affect, there is also less negative affect. 
+
+And just like that, you can run and interpret the results of a correlation. 
+
+A little reminder (According to certain conventions):
+
+- r= +/- 0-0.2= very weak correlation
+
+- r= +/- 0.2-0.4= weak correlation
+
+- r= +/- 0.4-0.6= moderate correlation
+
+- r= +/- 0.6-0.8= strong correlation
+
+- r= +/- 1>0.8= very strong correlation
+
+
+### The importance if chance
+
+There is one more important thing to mention, which is the phenomenon of chance. We can find correlations by chance alone, even when there is no true correlation between the variables. For example, we can sample randomly into two variables, which we know are not related because we randomly sampled the numbers. However, doing this creates some correlations over time just by chance, especially with smaller sample sizes. For example in the picture below you can see that the slope of the blue line is not always flat.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch3/corrchance.png')
+```
+
+Sometimes it looks like there is a correlation when we know there should not be one. These correlations are created by chance only, and this is why we have to be very cautious when interpreting our results. The point is, that now you know, you can find correlations or any results by chance only. So, you should always wonder if the correlations you find reflect a meaningful association between the x and y variables or if it is something else.
