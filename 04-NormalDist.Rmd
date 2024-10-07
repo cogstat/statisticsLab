@@ -608,4 +608,197 @@ This is probably the most commonly-asked question in Statistics class. Everyone 
 
 How to do it in JAMOVI
 
+## CogStat
 
+### Goals
+
+- Overviewing distributions
+
+- Sampling from distributions
+
+- Sampling distribution of the mean
+
+- Sampling statistics (statistics of many samples)
+
+- Normal Distribution
+
+### Sample
+
+In the manual describing other software packages, there are some chapters where generated data are used. This is easy to implement in R, but since CogStat cannot be used for modifying the data, it cannot generate data either. However, similar to data modification, we may generate these data with the help of a spreadsheet. 
+
+To solve the task you can load the data file “4.2_10randomnumber” from the demo data or you can generate the data for yourself. For this, open Excel. There is an easy way to generate data using the function “=RANDBETWEEN()”, which will generate a random number between two given parameters if you write it into a cell or the formula bar. The formula can be pasted to other cells, so more random data can be generated.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch4/sample.png')
+```
+
+This function acts like an endless gumball machine. You put the gumballs inside with different properties, say numbers between 1 and 10, and then you let it take them out.  Here the function randomly picks numbers between 1 and 10 each time. We did this 10 times, so our sample has 10 data points in it, but we could do as many times as we would like to. The more random number we would generate the more it would show us a smooth normal distribution. 
+
+Let’s take a look at our data after opening it with CogStat. We can run an “Explore variable” analysis on it to get the frequency details. Note, that the generated data in Excel is regenerating itself with every change made to the spreadsheet, so you might see slightly different results each time.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch4/4.2descftv_random.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch4/4.2histogram_random.png')
+```
+
+We can also generate a variable with values where an exact number has more chance to appear. This way the generated data still remains random, but its distribution will change. In Excel, this can be done by generating random data as before in cell A1. After that, in B1 another formula must be used, write =IF(A1>5;5; A1), this way more 5s should appear in the dataset (row B) than before when we were just generating random numbers. This should also be visible in the distribution.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch4/morefives.png')
+```
+
+You can also open this file from demo data, open “4.2_morefives and choose the second column “rand_changed” for analysis. We should choose “Explore variable” to take a look at the second, changed variables' frequency traits. 
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch4/morefivesfreq.png')
+```
+
+As you see more than half of the generated numbers turned out to be 5 (54% of all).
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch4/morefiveshisto.png')
+```
+
+### Uniform distribution
+
+A uniform distribution is flat, and all the numbers between the minimum and maximum should occur roughly equally. In the theorem, each value has the same likelihood to appear. For this distribution, two parameters of the data are fundamental: the minimum and the maximum values. We can sample random numbers between any range for the uniform distribution. 
+
+Let’s take 100 random numbers between 0 and 5 and plot the histogram. You can either open the file 4.3_uniform from the demo data or generate your own data. To do this, we will use the “=RANDBETWEEN()” command in the spreadsheet. Write “=RANDBETWEEN(0;5)” into the formula bar or in a given cell.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch4/4.3randbetween_function.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch4/4.3randinexcel.png')
+```
+
+To make the hundred numbers take the lower right corner of the square and drag it down until the 101th row. Copy and paste this variable into CogStat and choose “Explore variable” to see the descriptives and histogram. 
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch4/4.3expvarraw.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch4/4.3randrawhisto.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch4/4.3randsampleprop.png')
+```
+
+These histograms look flattish but not perfectly flat. After all, we only took 100 samples. What if we took many more, say 10,000  samples? Now it looks flatter, each bin is occurring about 500 times each, which is pretty close to the same amount.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch4/4.3randsamplepropfor10000.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch4/4.3randhistofor10000.png')
+```
+
+### Binomial distribution
+
+In the case of a binomial distribution, there are only two possible outcomes, and the chance for each is the same. Every repetition is independent of the others and can result in the desired outcome. Two parameters are fundamental here: the number of trials taken and the likelihood of success. For example, consider flipping a coin. It will be heads or tails, and the coin, if it is fair, should have a 50% chance of being heads or tails. So we would like to see how many times will the desired outcome happen from X trials, we can investigate how many times will the coinflip results heads from ten coinflips. If we make several trials from this, we can get a binomial distribution. 
+
+To demonstrate this, in a spreadsheet, you can generate numbers in the following way, shown in the picture below.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch4/4.4coinflip1trial.png')
+```
+
+In the first row from A to J generate a random number between 0 and 1, with =RANDBETWEEN(0;1). After that in the cell K1 use =SUMIF(A2:J2;1). This will count how many ones are in the cells between A2 and J2 and this is the result of ten continuous coinflip. We can pretend that one means heads and zero means tails. So, here from ten coinflips, we had 4 heads. We can take more cases and create a variable from the coinflip sums. 
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch4/4.4coinflipmoretrials.png')
+```
+
+This way we have in row K the sums of all trials when we flipped a coin ten times and got heads. This variable contains 100 trials, but we could do this as many times as needed. This file is available in the demo data under the name “4.4_binomial”. The variable, named “sum” can be analysed in CogStat, so load this dataset and choose the “Explore variable” analysis. We can see the frequency traits of the variable in a histogram and frequency tables in Raw data and in Sample properties.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch4/4.4expvarraw.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch4/4.4binomdistr.png')
+```
+
+The histogram shows us the frequency of observing different numbers of heads (for 10 flips) across a hundred simulations. Five happens the most, but two happens sometimes, and so does eight. All of the possibilities seem to happen sometimes, some more than others.
+
+### Normal distribution
+
+Normal distribution might be the most important one of all, that is what we usually see or assume in our statistical analysis when examining our sample. It has the shape of a bell, is symmetric, and has only one peak. Note, that not every distribution that has these traits are normal. Its necessary parameters are the mean and standard deviation. The picture below shows how normally distributed data might look like on a histogram. This one in the example has a mean of zero and a standard deviation of one in a sample of ten thousand participants. 
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch4/4.5normdistr.png')
+```
+
+Unlike the distributions mentioned earlier, the bell curve is continuous, which means that values are not interrupted with gaps and a variable can take on any values between a given range. The bell curve is commonly used in statistics and is especially important when testing a hypothesis. An example of this is the curve that IQ follows across people. 
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch4/4.5egiq.png')
+```
+Picture from: (Wikipedia- https://en.wikipedia.org/wiki/Intelligence_quotient)
+
+Here it can be seen that most people are located around the mean, which is 100, and fewer and fewer people have higher or lower scores. The bins with the highest and lowest scores contain only a tiny percentage of people. 
+
+If you open the data “4.5_normal” with CogStat and choose “Explore variables” on the variable, you can see the normal distribution of this generated data, as well as the data parameters. You can also generate the data yourself with the “NORMINV(RAND();100;20) function in a spreadsheet. After loading the dataset first, take a look at the raw data. 
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch4/4.5expvarraw.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch4/4.5expvarrawdescr.png')
+```
+
+If you see the scatterplot or you take your time to take a look at the dataset, you might realise what we already talked about, the data points can take any values in the range given and are quite symmetrical. 
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch4/4.5normalhisto.png')
+```
+
+### Sampling distribution of the mean
+
+The sampling distribution of the mean refers to a distribution obtained from multiple other samples’ mean. Which means a variable which contains several means. We will work with the data shown below. Here we see these close-to-zero numbers, each number represents the mean of one random sample. For example, sample 1’s mean is 0.4492527, sample 2’s mean is -0.0918667, and so on. These means taken as new datapoints will be used as a variable for our analysis in this section.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch4/4.6samplemeans.png')
+```
+
+The dataset “4.7_sdm” contains means of generated, normally distributed samples of ten, with a mean of zero and a standard deviation of one in the second coloumn. All these means come from the same normal distribution, but many of them are quite different from each other. This is because of random sampling error, random chance makes each sample a little bit different (e.g., you don’t always get five heads and five tails when you flip a coin). Open from demo data the file “4.7_sdm” and run an “Explore variable” analysis on the “sample_means” variable.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch4/4.6expvarsamplemeansRAW.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch4/4.6samplemeansdescriptives.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch4/4.6samplemeanshisto.png')
+```
+
+This is the distribution of the sample means in the CogStat output. As you see it does not look like a normal distribution at all, and that is because we had only ten samples. But if we calculate the mean of the means we get around 0.037, which is pretty close to zero.  This  is good since when we average over our samples the mean of the means better estimates the mean of the population distribution they came from. 
+
+If we repeat this sampling experiment a thousand times the distribution of the histogram will look more like normal. So what we do here is take a look at the descriptives of the means of thousand sample means. This would look similar to the picture shown below.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch4/4.6samplemeanshisto(moretrials).png')
+```
+
+Notice the properties of the histogram, the curve seems to be bell-shaped and the sample means are mostly around zero. It is also quite narrow. The numbers on the x-axis do not go much past -0,4 to +0,4.
+
+If we take a look at the descriptives we can see that the mean is much closer to zero than in the previous task when we only used ten samples.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch4/4.6samplemeansdescriptives(more).png')
+```
+
+Probably if we would repeat this task, for example, 100000 times or even more, we would get a mean closer and closer to zero. The importance of all this is, that we investigate the distribution of the sample means. This is what we call the sampling distribution of the mean. As we saw, with the changes in the number of samples taken the curve of the distribution also changes a bit as it becomes less noisy. 
+
+It also shows that the more data you have, the more accurate the mean’s mean will be in this task. With only ten number of samples, the mean does not represent properly the whole dataset. As you already saw, if we calculate the mean of a sample of ten, again and again, the means can be quite different from one another. With a dataset of a hundred or thousand, it is more likely to be a very similar mean after repeating the test. 
