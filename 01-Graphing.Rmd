@@ -811,7 +811,7 @@ We will start every task with the same first step, which is, to load the dataset
 
 ```{r , echo=FALSE,dev='png"}
 knitr::include_graphics('img/ch1/CS_homepage.png'}
-
+```
 
 In CogStat, as you can see in the picture above, there are two separate areas or panes: on the left, we have all our variables and data, and the right side functions as an output, where the results of our tests will appear.
 
@@ -826,14 +826,13 @@ Also, it is always useful and recommended to use short variable names with Engli
 You might see error messages that are not related to your imported data, for example, a message like “Oops, something went wrong.” will be sent by CogStat if an analysis cannot be completed because of a software error. Depending on your preferences, you can ask CogStat to give you detailed error messages related to these types of error messages. To change these settings select the option “Preferences” (Ctrl+Shift+P) and pick “On” or “Off” at “Detailed error message”.  Turning the detailed error messages on can help if you find a bug and would like to report it to us, as with bug reports we always ask for detailed error messages. 
 If you would like to get more information on how to report a bug visit the following link: https://doc.cogstat.org/Report-a-bug)
 
-
 ```{r , echo=FALSE,dev='png"}
 knitr::include_graphics('img/ch1/preferences.png'}
-
+```
 
 ```{r , echo=FALSE,dev='png"}
 knitr::include_graphics('img/ch1/detailederror.png'}
-
+```
 
 ###  Where are the most film permits being requested? 
 
@@ -848,15 +847,17 @@ To do that, return to our dataset, and select the “Explore variable” analysi
 
 ```{r , echo=FALSE,dev='png"}
 knitr::include_graphics('img/ch1/explorevariable1.png'}
+```
 
 ```{r , echo=FALSE,dev='png"}
 knitr::include_graphics('img/ch1/explorevariable2.png'}
+```
 
 From “Analysis” you can find all the available analyses, to choose from. Keep in mind that there are no specific tests or graph names to choose from here, as in all cases a task can be chosen. After choosing “Explore variable” a dialogue appears.
 
-
 ```{r , echo=FALSE,dev='png"}
 knitr::include_graphics('img/ch1/explorevariables.png'}
+```
 
 In the dialogue, select the variable “Borough” and click on the arrow pointing to the right, or drag and drop the variable from “Available variables” to “Selected variable(s)”. Make sure that “frequencies” is ticked in and press “OK”. (Although, the “Frequencies” button is ticked by default.)
 
@@ -866,12 +867,13 @@ Making the result interpretation even easier, the output’s structure in almost
 
 In the first main section of the output called “Raw data”, we can see a histogram with the Boroughs and the frequencies of film permits requested. This information also appears with numbers and percentages in the “Sample properties” part, the second main part of the CogStat output. 
 
-
 ```{r , echo=FALSE,dev='png"}
 knitr::include_graphics('img/ch1/exp.graph1.png'}
+```
 
 ```{r , echo=FALSE,dev='png"}
 knitr::include_graphics('img/ch1/exp.des..png'}
+```
 
 After taking a look at this chart and table we can easily answer our original question. You can see that 50728 film permits were submitted from the observed cases row of raw data. Also, the histogram shows how these permits are divided, for example, in Brooklyn almost twice as many permits were submitted as in Queen’s. From the Frequencies table, you can tell that 50% of the film permits were requested in Manhattan, followed by Brooklyn, then Queen’s, Bronx, and finally, Staten Island, as both the graph and frequencies show this. 
 
@@ -881,14 +883,15 @@ The variable “Category” gives us some information about what kind of films a
 
 ```{r , echo=FALSE,dev='png"}
 knitr::include_graphics('img/ch1/expvar_rawdata_cases.png'}
-
+```
 
 ```{r , echo=FALSE,dev='png"}
 knitr::include_graphics('img/ch1/expvar_hitogr(category).png'}
-
+```
 
 ```{r , echo=FALSE,dev='png"}
 knitr::include_graphics('img/ch1/expvar_sampleprop(cat).png'}
+```
 
 In the “Raw data” part of the output, we can see, that most films were requested in the category “Television”. From “Sample properties” the “Frequencies” table shows us that “Television” is 54.1% of the film permits submitted. The only difference between this analysis and the previous analysis is that we changed the variable from “Borough” to “Category” when choosing the variables for analysis.
 
@@ -898,12 +901,14 @@ If we would like to know what kind of sub-categories are there, we only have to 
 
 ```{r , echo=FALSE,dev='png"}
 knitr::include_graphics('img/ch1/expvar_histogram(subcategory).png'}
+```
 
 As you see with long variable names the titles are pretty hard to see, because of this reason we recommend you name your data with shorter names. We would like to add, that this problem is noticed and we are working on it to solve the readability of titles with long names. 
 
 
 ```{r , echo=FALSE,dev='png"}
 knitr::include_graphics('img/ch1/Expvar_sampleprop(subcategory).png'}
+```
 
 We can see that episodic series are the most common form of all of the subcategories, and the frequencies table shows us that it means 15416 permits, which is 30.4% of the total.
 
@@ -915,24 +920,29 @@ Suppose, we want to make a plot for Categories by different Boroughs in CogStat.
 
 ```{r , echo=FALSE,dev='png"}
 knitr::include_graphics('img/ch1/comparegroups.png'}
+```
 
 ```{r , echo=FALSE,dev='png"}
 knitr::include_graphics('img/ch1/comparegroups2.png'}
+```
 
 The first thing shown in the output is the raw data. Here, we can see each of the observed cases of Boroughs (groups) and their missing data. 
 
 ```{r , echo=FALSE,dev='png"}
 knitr::include_graphics('img/ch1/compraw.png'}
+```
 
 When we look at the relations of more variables, CogStat provides us with a mosaic plot, looking somewhat like this, still in the raw data section of the output. 
 
 ```{r , echo=FALSE,dev='png"}
 knitr::include_graphics('img/ch1/compare_mpsaic.png'}
+```
 
 This plot might look a little crowded since we have many categories for both variables and many of the names are quite long. Having fewer categories and shorter variable names makes every plot more pleasant-looking. We also get tables that show us the answer to our question, like these contingency tables.
 
 ```{r , echo=FALSE,dev='png"}
 knitr::include_graphics('img/ch1/comparecont.png'}
+```
 
 From these tables, we can find out what kind of films are requested in different Boroughs. For example, we can interpret, that in Manhattan, “Television” is the most popular form of film, or that in Manhattan “Television” is more requested than in Brooklyn or in any other borough.
 
@@ -944,9 +954,11 @@ If you are not happy with the look of the plot CogStat provided by default, ther
 
 ```{r , echo=FALSE,dev='png"}
 knitr::include_graphics('img/ch1/preferences2.png'}
+```
 
 ```{r , echo=FALSE,dev='png"}
 knitr::include_graphics('img/ch1/preferences_charttheme.png'}
+```
 
 Another method is to change the “Image format” to “SVG” and choose a program, in which you can make changes to the graph, so you can edit it (e.g. in LibreOffice). Note that you cannot manually change the plots in CogStat. (for more: https://doc.cogstat.org/Displaying-the-data-and-results-graphically)
 
@@ -958,6 +970,7 @@ For the next part, we will use the dataset “gapminder”, so load the data int
 
 ```{r , echo=FALSE,dev='png"}
 knitr::include_graphics('img/ch1/lieexhisto.png'}
+```
 
 Another difference in this task is, that this time we do not look for the traits of groups individually. For example, we do not look at how many people live in each country separately, but we look at all the countries at once divided by age. The bars represent different age groups here, but they consist of people from all over the world. On axis X, we can see the life expectancies that appear in our dataset, and on axis Y, we see how many times those life expectancies appear. According to our histogram, we can say, that the most common life expectancy in the data observed is somewhere between the ages of seventy and eighty.
 
@@ -970,16 +983,19 @@ In CogStat, we can choose “Explore relation of variable pair” and put “lif
 
 ```{r , echo=FALSE,dev='png"}
 knitr::include_graphics('img/ch1/variablepair1.png'}
+```
 
 or
 
 ```{r , echo=FALSE,dev='png"}
 knitr::include_graphics('img/ch1/variablepair2.png'}
+```
 
 At the top of the output, we can see a scatterplot with the raw data and the trend of life expectancy in Hungary. We can say that the Hungarian life expectancy has been rising over the years and it especially looks more promising since the 1990s.
 
 ```{r , echo=FALSE,dev='png"}
 knitr::include_graphics('img/ch1/variablepairplot.png'}
+```
 
 ### Using the results pane in CogStat
 
@@ -987,6 +1003,7 @@ In the Results menu, you can find some functions that make handling the results 
 
 ```{r , echo=FALSE,dev='png"}
 knitr::include_graphics('img/ch1/menu_clearresults.png'}
+```
 
 If there is something specific you would like to find in the output choose “Find text…”. With the increase or decrease text size options, the output’s text sizes can be adjusted. Note that this will not change the size of the charts. With the “Test is editable” option on, the text can be modified by adding some comments. If you choose “Save results” the output will be saved in an HTML format, with “Save results as…” you can choose a file to save to, and with “Save results” the modifications will be saved in the previously assigned file. We have to mention here, that sometimes you may not want to save the output since it is often faster to re-run some tests than searching for the saved files on your computer. 
 (for more: https://doc.cogstat.org/Handling-output)
@@ -997,25 +1014,10 @@ As you already noticed, CogStat chooses what should be calculated or displayed. 
 
 ```{r , echo=FALSE,dev='png"}
 knitr::include_graphics('img/ch1/feature.png'}
+```
 
 You might think that CogStat calculated your result incorrectly. In some cases, CogStat calculates things intentionally differently than other software packages. In those cases, the developers think that it is better to use a different method than what you find in other software packages (find more information at https://doc.cogstat.org/Differences-in-calculations-between-CogStat-and-other-programs). In some other cases, the modules CogStat relies on may include a bug, and the calculation is incorrect. If you think that this is the case, you can report the bug. (for more: https://doc.cogstat.org/Report-a-bug).
 
 ```{r , echo=FALSE,dev='png"}
 knitr::include_graphics('img/ch1/menu_reportaproblem.png'}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
+```
