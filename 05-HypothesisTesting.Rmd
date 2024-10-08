@@ -541,4 +541,108 @@ ___
 
 How to do it in JAMOVI
 
+## CogStat
+
+### Goals
+
+- Understanding the fundamentals of hypothesis testing
+
+### The importance of hypothesis testing
+
+In this chapter we will mainly look at experiments, to find out whether one variable influences another one. Then, we look at the data to help us answer that question. In general, we expect to find a difference in our measurement between the conditions of the experimental manipulation, when the manipulation works. We expect not to find a difference when the manipulation does not work and does not cause change. For example, we would like to know whether looking at pictures of baby animals can make people happier. Here the manipulation is the pictures of baby animals and the measurement is how happy people are. First, assume that we have a hundred participants, who are randomly assigned into Group A and Group B and these groups have an equal number of participants, so fifty people in each group. In this example research setting, both of the groups first would watch a relatively boring clip from a nature documentary film, which is a neutral stimulus for most people. After that, they have to wait for the examiner to start the next part of the experiment. In this couple-minute long wait, Group A can watch pictures of happy animal babies, while Group B just simply waits for the examiner. When the examiner arrives, both groups fill in a questionnaire about their mood. We assume here that there is only one difference between the two groups observed, which is the time spent looking at pictures of baby animals. In this case, the null hypothesis states that there is no difference between the perceived mood of Group A who watched animal pictures and Group B who did not watch the pictures. 
+
+However, experimental manipulations are not the only thing that can cause change in our measure. Even chance alone can cause change. Our measures of variables usually come along with some change in them due to sampling error. When we conduct an experiment, we want to know if the change we observed is bigger than the change that can be produced by chance. Theoretically, random chance could produce almost any change we might measure in our experiment. So, there will always be uncertainty about whether our manipulation caused the change, or chance caused the change. However, we can reduce and evaluate that uncertainty. When we do this, we make inferences about what caused the change in our experiments, and this process is called statistical inference. We use inferential statistics as tools to help us make these inferences.
+
+In this chapter, we introduce you to foundational concepts in statistical inference, which is also commonly described as hypothesis testing. We describe and conduct a few different statistical tests for building your conceptual understanding of statistical inference. In particular, we work through the Crump test and the Randomization test. We show you how to run these tests on fake and real data.
+
+### Crump test
+
+The Crump test is an unofficial intuitive method that aims to help the understanding of statistical inference, created by Matthew J. C. Crump. The idea behind the Crump test is to find out what kind of differences between two conditions can be found by chance alone. 
+
+#### Crump test on generated data
+
+CogStat is not meant for generating or simulating data, so only a part of the simulation can be run. Still, we will be able to see the variation based on random sampling and build an intuition about the sampling distribution.
+
+A Crump test with no manipulation would look similar to these steps:
+
+1. Sample 20 numbers for control group A with a normal distribution (20, mean=75, sd=5)
+
+2. Sample 20 numbers for control group B with a normal distribution (20, mean=75, sd=5)
+
+3. Compute the means for control groups A and B
+
+4. Compute the difference between the mean for groups A and B
+
+5. Save the differences score in a variable
+
+6. Repeat as many times as we want  (repeating it many times over is called Monte Carlo simulation)
+
+We generate the random numbers in spreadsheet software (here, in Excel), which you can load from the demo data under the name “Crumptest_ongenerateddata”. To generate  random numbers with a normal distribution we can write the following line into the formula bar =NORMINV(RAND(0;100);75;5). In this case twenty (N=20) numbers must be generated. Adding “id” and numbers from 1 to 20 makes it look more like a real dataset with participants. Now, this will be “Group A”. If you do the same procedure once again in the next column you can create “Group B”.
+
+It is important that in spreadsheets we can also set the measurement level for the variables in a second row, which makes our work in CogStat easier. Now we can compute the means of both A and B groups. After loading the data in CogStat, choose “Analysis'' then “Explore variable…” and select both variables from “Available variables” as  “Selected variables” and press "OK ". 
+
+In the “Descriptives for the variable” table, we can see, among several descriptive values, that the mean for Group A is 76.2.  For Group B, the mean is 75.2.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch5/5.3.2groupAdescr.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch5/5.3.2groupBdescr.png')
+```
+
+Take a minute to look at the difference of the means. 76.2-75.2= the mean difference is 1. We could do the whole process from the beginning more times to make comparisons if we would like to follow the Crump test’s philosophy. For now, it is enough to realise that if we generate random numbers for groups and compare these groups’ mean we will easily see the difference chance can produce. 
+
+#### Making inferences
+
+Take a look at an example to incorporate all the things we learned in the chapter so far. Imagine, that an examiner runs an experiment with two groups, Group A and Group B, both with twenty participants. There is the same test assigned, for all the participants of Group A and B. The only difference between them is that Group A receives additional instruction before taking the test, while Group B simply just fills in the test form, without any additional advice. Because the examiner had already done this experiment with other groups before, he assumed that Group B’s test scores would show a normal distribution, with a mean of seventy-five and a standard deviation of five. After getting the results back, he found out that the mean test performance for Group A (with additional instruction) was 76%, and the mean test performance for Group B (without additional instruction) was 75%. The mean difference has an absolute value of +1. According to this information, would you think that the difference between the performance of the two groups is caused by the additional instruction or by chance only? According to the parameters given, the +1 mean difference is inside the range, where you might consider that the difference is only caused by chance. There is no right answer here, it might be chance or the instruction given to Group A has a very small effect on the results. 
+
+Consider that the examiner had done the same experiment, only the result came back a little differently this time. Group A’s mean test performance is 90%, while Group B’s mean test performance is 75%, so there is a 15% absolute mean difference between the two groups. Knowing the given parameters, would you think that the +15 mean difference is produced only by chance? With a standard deviation of five it is quite unlikely to have a 15% performance difference caused only by chance. So it looks like Group A has a 15% better test performance, but would you believe that this difference is caused by the manipulation (given extra instructions)? It is always up to the person making the inference. 
+
+If we compare the two hypothetical situations we might choose which one is easier to believe that the performance differences are produced by the manipulation and which one you can suspect that the differences are probably caused by chance. Finally, you might have an idea about what happens a lot and what does not, probably a 15% performance difference in a setting like this caused by chance only happens very rarely, almost like winning the lottery. Keep in mind the importance of group sizes, with only a few participants, there is a higher probability that the outstanding differences are only produced by chance. 
+
+#### Crump test on real data
+
+In this example, we will use the Crump test to evaluate the results of an already-published paper. This might help to build up one's intuition about whether an observed difference is caused by manipulation or by chance. We will explore the process of making a series of assumptions to replicate the outcomes of experiments that have been published, even in cases where precise details are not explicitly stated in the associated paper.
+
+##### Test-enhanced learning
+
+According to prior research in the field of cognitive psychology, some practices can help students with comprehension and keeping information in their memory (Roediger III & Karpicke, 2006; https://www.jstor.org/stable/40064526). One of the practices is test-enhanced learning, which means that students are continuously taking tests while studying. Regarding the paper mentioned, students who study the material and take tests remember better the material learned, than students, who just tried to learn the material.
+
+In the experiment, the subjects learned about some things in two conditions. In one condition (study-study) they studied some things, then studied them again. In the other condition (study-test) they studied some things, then took a quiz about the things rather than studying them one more time. Everyone received follow-up tests to see what they learned and remembered a week after the learning period. The researchers measured the mean proportion of things remembered in both conditions. They found that the study-test condition had a higher mean proportion of remembered units than the study-study condition. So, the difference between the mean proportions suggests that taking a quick test after studying is beneficial for remembering the content. The researchers also conducted statistical tests, and they concluded the difference they found was not likely due to chance. Let’s apply the Crump test to their findings, and see if we come to the same conclusion about the role of chance.
+
+To do the Crump test, we need to make assumptions about where the sample data is coming from. Download the paper from the link, then look at Figure 1. We will estimate our distribution by looking at this figure. We will make assumptions based on these pieces of information.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch5/5.3.4.1articlefigure1.png')
+```
+
+This graph from the original article shows the mean proportion of idea units recalled on the test in both of the groups after five minutes, two days, and one week. First, look at the bars from the one-week condition only. The mean for the study-study group is about 0.4. The mean for the study-test group is about 0.55. (The results section reports that the actual mean for the study-study group was 0.42 (42%) and the mean for the study-test group was 0.56 (56%), which is quite close to the guess we made based on visualisation.) The data show that the study-test group remembered 0.14 (14%, 0.56-0.42=0.14) more idea units than the study-study group.
+
+###### Estimating the mean
+
+We can imagine that this difference could have been caused by chance. For example, in this case, both samples would have been drawn from the same distribution. For example, we might say that on average people remember about 0.49 idea units after a one-week delay. We got 0.49 by averaging the 0.42 and the 0.56 together. We can use this as the mean for our distribution in the Crump test. 
+
+###### N
+
+The paper says there were 120 subjects in total, and that different groups of subjects were measured in the three different delay conditions (5 minutes, 2 Days and 1 week). We will assume there were an equal number of subjects in each group. There were 3 groups, 120/3 = 40, so we assume there were 40 subjects in the 1-week delay group.
+
+###### Estimating standard deviation
+
+The paper does not directly report the standard deviation for measuring proportion idea units. But, we can estimate it visually and take a guess this time. Look at the little bars with a line on them coming out of each bar. These are called error bars, and they represent the standard error of the mean.
+
+These look like they are about 0.033 in length. We know the standard error of the mean (SEM) is the standard deviation divided by the square root of N. So, we can infer that the standard deviation is 0.033∗√40=0.21. The paper also reports Cohen’s D, which is a measure of effect size using the mean difference divided by the standard deviation. Cohen’s D was 0.83, so the standard deviation must have been 0.14/0.83=0.168, which is pretty close to our guess of 0.21.
+
+###### Finding from the original study
+
+One week after the initial learning conditions, subjects came back and took a retention test to see how much they learned. The mean proportion of “idea units” recalled was:
+
+1. study-study: 42% or 0.42
+
+2. study-test: 56% or 0.56
+
+The mean difference was 0.56-.42 = 0.14 or 14% improvement. That is actually pretty big. What we want to know is whether chance could produce a difference of 14%, or 0.14, just by itself.
+
+
+
 
