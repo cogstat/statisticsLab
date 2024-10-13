@@ -643,6 +643,74 @@ One week after the initial learning conditions, subjects came back and took a re
 
 The mean difference was 0.56-.42 = 0.14 or 14% improvement. That is actually pretty big. What we want to know is whether chance could produce a difference of 14%, or 0.14, just by itself.
 
+###### Running the test
 
+1. Our sample N is 40
 
+2. The mean of our distribution is 0.49
 
+3. The standard deviation of the distribution is 0.168
+
+We can do this in a spreadsheet by using the following formula =NORMINV(RAND(0;100);0,49;0,168). With this, let’s generate two groups or you can use the file provided in the demo data, called “Crump_realdata”.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch5/5.3.4.1.5randGroup12.png')
+```
+
+Now we can load the data into CogStat and use the “Explore variable” analysis to look at the descriptives of these variables. After the analysis, we can compare the results of both groups. 
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch5/5.3.4.1.5randExpvarrawG1.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch5/5.3.4.1.5descrG1.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch5/5.3.4.1.5randExpvarrawG2.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch5/5.3.4.1.5descrG2.png')
+```
+
+From these tables, we can compare the descriptives of the two groups, as well as compute the mean difference, which is 0.043. You can see that this difference is not out of the range of 14%. According to the philosophy behind the Crump test, by running a simulation we could reproduce these results as many times as we want and could create a distribution from the mean differences.
+
+### Randomisation Test
+
+Unlike the Crump test, which was made to help the understanding of some basic ideas about how chance can work, the Randomization test is a well-known statistical test for making inferences about what chance can do. You will see that it is very similar to the Crump test in many ways. 
+
+The major difference between the Crump test and the Randomization test is that we do not assume the distribution that the sample data came from. We just randomize the sample data. We:
+
+- Take all the numbers from groups A and B, and put them in the same pot. Then randomly take the numbers out and assign them back to A and B. Then, compute the means, and the difference, and save the difference
+
+- Do this over and over
+
+- Plot the histogram of the mean differences obtained by shuffling the numbers. This shows you what chance can do.
+
+We can complete this task to a certain point in Excel, by generating data, then we import the dataset into CogStat to take a look at its descriptives. First, we have to generate random data in a normal distribution, just like before, in the Crump test. You can also skip the following steps if you just load the data called “randomization” from the demo data. If you would like to generate the data yourself, use the =NORMINV(RAND();50;10) formula and generate 20-20 data points for Group A and Group B. With this, your random data will change with every modification you make to your sheet. 
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch5/5.4Gab.png')
+```
+
+Create two new variables “meanA” and “meanB” for the mean of Groups A and B. To compute these values use the function =MEAN(A3; A22) and =MEAN(B3; B22). 
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch5/5.4meandiff.png')
+```
+
+Now create a new variable in a new column where the mean differences can be computed. To manage this just simply write =C3-D3 in cell E3. Note, that as the values in variables GroupA and GroupB change the values in columns C, D and E will change, too. Lastly, create a new variable, in which we can save these values. We can copy the values from column D and paste only the values in this new variable, as with every modification new values will be generated in the previous variables, do this twenty times and after that load the dataset in CogStat. 
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch5/5.4meandiffvariable.png')
+```
+
+After loading the data into CogStat, choose the “Explore variable” analysis on variable “meandiff_saved_as_variable”. 
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch5/5.4rawdata.png')
+```
+
+From the raw data, we can see that data points between -2 and 5 appear a lot but outside this range appear less.
