@@ -682,3 +682,192 @@ ___
 ## JAMOVI
 
 How to do it in JAMOVI
+
+## CogStat
+
+This chapter uses the open data from Experiment 1 of Mehr, Song, and Spelke (2016) to teach one-sample and paired-sample t-tests. The results of the activity provided below should exactly reproduce the results described in the paper.
+
+### Goals
+
+- Conduction of a one-sample T-test
+
+- Conduction of a two-sample T-test
+
+### Study description
+
+For this chapter, we will use the data from  (Mehr et al., 2016, see: https://journals.sagepub.com/doi/10.1177/0956797615626691), a study of how music may convey important social information to infants.
+
+The researchers recruited thirty-two infants and their parents to complete an experiment to test their hypothesis. During their first visit to the lab, the parents were taught a new lullaby (one that neither they nor their infants had heard before). The experimenters asked the parents to sing the new lullaby to their child every day for the next 1-2 weeks.
+
+Following this exposure period, the parents and their infant returned to the lab to complete the experimental portion of the study. Infants were first shown a screen with side-by-side videos of two unfamiliar people, each of whom was silently smiling and looking at the infant. The researchers recorded the looking behaviour (or gaze) of the infants during this “baseline” phase. Next, one by one, the two unfamiliar people on the screen sang either the lullaby that the parents had learned or a different lullaby (that had the same lyrics and rhythm, but a different melody). Finally, the infants saw the same silent video used at baseline, and the researchers again recorded the looking behaviour of the infants during this “test” phase.
+
+### One-sample t-test
+
+A one-sample t-test works as a hypothesis test to determine whether the mean of the observed sample is significantly different from a standard value we can set. So the idea behind a t-test is to compare a value to a sample mean. Let’s take a look at how this works in practice on real data in the next subsections.
+
+### One-sample T-test in CogStat - Baseline phase
+
+For this task, we will use the dataset “MehrSongSpelke2016_cut”. We would like to show that infants’ looking behaviour does not differ from chance during the baseline trial. The baseline trial was 16 seconds long. During the baseline, infants watched a video of two unfamiliar people presented next to one another. There was no sound played during the baseline. Both of the actors in the video smiled directly at the infant so there was no difference in how friendly their appearance seemed towards the infant.
+
+The important question to answer here is whether the infant looked more or less to either person. If they showed no preference, the infant should look at both people about 50% of the time. How could we determine whether the infant looked at both people equally half of the time?
+
+There is a column called “Baseline_Proportion_Gaze_to_Singer”, which contains values that show the proportion of time that the infant looked at the person who would later sing the familiar song to them. If the average of these proportions is 0.5 across the infants, that would provide some evidence that the infants were not biased at the beginning of the experiment. However, if the infants on average had a bias towards one of the people displayed, then the average proportion of the looking time should be different than 0.5.
+
+In this task, the null hypothesis is that the baseline mean does not differ from the 0.5 mean, which means that the time spent looking at both people is about equal. Using a one-sample t-test, we can test the hypothesis that our sample mean for the “Baseline_Proportion_Gaze_to_Singer” was not different from 0.5.
+
+First, open the dataset “MehrSongSpelke2016_cut” in CogStat. To check whether the baseline is different or not from 0.5, we will run a one-sample t-test. Choose “Analysis” and then “Explore variable”. After the dialogue appears, follow these steps: choose the variable “Baseline_Proportion_Gaze_to_Singer” as “Selected variable(s)”, and set the “Central tendency test value” to 0.5 after that, press “OK”. As mentioned before, the null hypothesis is that the mean of the baseline value will not be significantly different from 0.5, which we set earlier.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch6/6.4expvarwindow.png')
+```
+
+After we run the test, take a look at the output. It is always useful to look at the raw data first. The raw data is in the upper section of the output and it shows that thirty-two cases were used. The data points graphed fluctuate between 0.2 and 0.9. At first glance, one might say that they appear more frequently between 0.4 and 0.5.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch6/6.4expvarraw.png')
+```
+
+If we take a look at the Sample properties, the Descriptives for the variable part show that the mean of the baseline is 0.52. This seems closer to the value that implies equality in time spent looking. 
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch6/6.4descr.png')
+```
+
+As the picture below from Population Properties shows, CogStat first used the Shapiro-Wilk test to check normality, which is an assumption for a one-sample t-test. The result of the normality test for the variable “Baseline_Proportion_Gaze_to_Singer” is W=0.95, p=0.177. From the results, W means W statistic, its value can range between 0 and 1, and the closer its value is to 1 the more surely the data observed come from a population with normal distribution. The value p determines the significance of the test. Since the p-value here is 0.177, which is over 0.05, the test is not significant. 
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch6/6.4poppropSW.png')
+```
+
+At the end of our output, CogStat provides the results of the one-sample t-test. A little reminder, that the value 0.5 was compared to the mean of the baseline variable. 
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch6/6.4hyptest.png')
+```
+
+The result of the one-sample t-test is t(31)=0.67, p=0.505. Take a look at the values. The value 31 in the results is the degrees of freedom (df=n-1). 0.67 is the t-statistic value, which is the difference between the observed mean (here the mean of the baseline) and the expected mean (here 0.5) divided by the standard error (which is the standard deviation/√elements of the sample). As p>0.05 in this case (p=0.505), the mean of the time spent looking is not significantly different from 0.5, so we cannot reject the null hypothesis based on the information given.
+
+### One-sample t-test in CogStat- Test phase
+
+The question in this task is: Did the infants look more to the person who sang a familiar song or to the one who sang an unfamiliar song? 
+
+Remember how the experiment went since this point. Infants watched silent video recordings of two women (Baseline). Then each person sang a song, one was familiar to the infant (their parents had sung the song to them many times before), and one was unfamiliar (singing phase). After the singing phase, the infants watched the silent video of the two singers again (test phase). The critical question was whether the infants would look more to the person who sang the familiar song compared to the person who sang the unfamiliar song. If the infants look at one person more than the other, then they should look more than 50% of the time to the singer who sang the (un)familiar song (since 50% is equal time spent looking for both women). To find out we can do another one-sample t-test. 
+
+We have to do the same thing as in the previous task but with the variable “Test_Proportion_Gaze_to_Singer”. This variable contains the time proportion of gaze the infant spent looking at the woman who sang the familiar song. Choose “Analysis” and then “Explore variable”. If the dialogue appears, take these steps: choose the variable “Test_Proportion_Gaze_to_Singer” from “Available variables”  as “Selected variable(s)”, and set the “Central tendency test value” to 0.5, after that press “OK”.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch6/6.5expvarwindow.png')
+```
+
+We can easily notice some differences in the raw data, comparing it to the results in Task 1. In the Raw data first, we see a plot with data points fluctuating between almost 0.2 and 1.0 and appearing more frequently around 0.4 and 0.6, but it can be seen that there are more data points around 0.7 and 0.8 as well.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch6/6.5expvarraw.png')
+```
+
+Looking at the Descriptives, we can see that the mean of gaze proportions in the test phase is  0.59.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch6/6.5descr.png')
+```
+
+As mentioned before, normality is an assumption of a one-sample t-test, so CogStat automatically runs a normality test before the t-test. To test normality a Shapiro-Wilk normality test was run. The results (W=0.97, p=0.477) show that the W statistic is 0.97, which is pretty close to one, meaning the data more surely comes from a population with normal distribution. Since the normality test is not significant (p=0.477), the normality is not violated.  
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch6/6.5poppropSW.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch6/6.5hyptest.png')
+```
+
+Because the normality assumption was met, CogStat conducted the one-sample t-test and displayed the results, which are t(31)=2.96, p=0.006. The one-sample t-test is significant (p=0.006), which means that the mean of our sample is significantly different from 0.5. Meaning, that the infants spent more time looking at the person who sang the familiar song since gaze proportions contain the data for the familiar song-singing person. 
+
+### Paired Samples t-test
+
+The paired sample t-test can be used on repeated measured designs, which means that data have been gathered from the same sample more times. As in the one-sample t-test, means will be compared to each other, but this time the two observed variables’ means. This test requires the variables to be set on an interval measurement level. 
+
+### Paired Samples t-test in CogStat
+
+By running a paired samples t-test in our example, we can see if there is any difference between the time spent looking by the infants, in the baseline and the first experiment setting. There are three possible outcomes:
+
+1. There might be no significant difference found between the baseline and test phase in terms of gaze towards the singer.
+
+2. We might find differences between the two settings, negative as well as positive changes also can be found.
+
+3. We might find that the gaze proportion from the baseline to the test phase decreases or increases.
+
+To do a paired samples t-test in CogStat we use the “Compare repeated measures variables” analysis. Choose “Analysis” and then “Compare repeated measures variables” or press Ctrl + P. 
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch6/6.7comparerepeatedmeasures_icon.png')
+```
+
+or
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch6/6.7comparerepeatedmeasures_menu.png')
+```
+
+Select the variables “Test_Proportion_Gaze_to_Singer” and Baseline_Proportion_Gaze_to_Singer” for the analysis, and then press"OK ". 
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch6/6.7comparerepeatedmeasures_window.png')
+```
+
+In the output, the first thing you will see is the raw data, with thirty-two cases. These cases are visualised on a plot that shows the changes between the baseline’s and test setting’s individual data. Datapoints that belong to the same participants are connected with lines between the conditions. 
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch6/6.7comparerepeatedmeasures_info.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch6/6.7comparerepeatedmeasures_raw.png')
+```
+
+In sample properties, descriptive data, standardised effect sizes and boxplots are provided. We can see in the descriptives that the participants' proportion gaze during the baseline condition has a mean of 0.52 and in the test layout, the mean is 0.59. This implies that in the test condition, infants looked more to the woman who sang the familiar song, as the mean value for this condition is higher.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch6/6.7comparerepeatedmeasures_sampleprop.png')
+```
+
+In sample properties boxplots are also provided, to show the representation of the data used in the analysis. 
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch6/6.7comparerepeatedmeasures_boxplot.png')
+```
+
+The Population Properties section provides population parameters with confidence intervals and graphs, standardised effect sizes, and lastly the hypothesis test. 
+
+#### Reminder: Confidence Intervals
+
+*Data used in statistical analysis usually contain information about not the whole population, but about a sample, taken from the population. That means that the parameters we estimate are based on only a group of people. It implies that the parameters of a sample taken (even if this sample is large and representative enough) are not entirely the same as the parameters of a whole population. A confidence interval is a tool that can communicate this uncertainty in the results and shows how close our estimation is to the population parameters. A confidence interval is a range where the population’s real value lies with a high probability. For example, a 95% confidence level is used very often in statistics, which means that the population’s parameter 95% sure is located in the range given.*
+
+*Population parameter estimations include the 95% confidence intervals of mean differences. Hedge’s g works as a measure of effect size that shows how much the two observed groups differ from each other. It comes with confidence intervals, and since the confidence interval's values do not include 0, it means that the population’s mean difference might be between the numbers -0,777 and -0,027, and is negative.*
+
+Interpretation of the confidence interval
+In a paired-samples t-test, the confidence intervals show a range in which the difference between the two observed groups falls. The confidence interval has a lower and an upper value, which represents the lower and upper limits of the range, so the difference (here the difference of the two group’s mean) falls between these two values. The lower and upper values provide some very important information in the interpretation.
+
+*If both the lower and upper values are negative, then the difference is likely to have a negative value, too, between these two values. If both the lower and upper values are positive it is likely that the difference is also positive and falls between these two. If the range of the confidence interval overlaps with zero that means that the difference might be positive, negative or even 0, which means that there may be no difference between the two measurements.*
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch6/6.7comparerepeatedmeasures_hyptest.png')
+```
+
+CogStat checked the assumptions for normality and since normality was not violated, a paired-samples t-test could be conducted. The result of the paired-sample t-test is t(31)= -2.42, p=0.022. Same as before, 31 is the degrees of freedom. T means the test statistic of the t-test and shows the distance of the two conditions’ means from each other in terms of standard error. As p is 0.022, the test is significant. This means that there is a significant difference between the means of the two conditions and the proportion of looking at the woman who sang a similar melody in the test phase was larger than the proportion in the baseline. 
+
+### Relationship between one-sample and paired-samples t-test
+
+A one-sample t-test and a paired-sample t-test are related tests. We use the one-sample t-test if we would like to compare a group’s mean to a hypothetical mean we can set. With this method, we can find out whether there is a significant difference between them or not. With a paired-samples t-test we would like to compare a group’s mean in two settings. This way we measure the same people’s traits, but in different conditions. A one-sample t-test can replace a paired-samples t-test, if values in the two conditions are subtracted from each other, creating a new variable, with difference scores. On these values, a one-sample t-test can be used to estimate whether they are significantly different from 0. This way a one-sample t-test can give the same answer as a paired-samples t-test would. 
+
+We can take a look at this in practice if we analyse the variable “Difference_in_Proportion_Looking”.  This variable contains the difference score between the baseline and test conditions for each infant. We are going to treat this as our one sample (as in the one-sample t-test), and we will be comparing it to a mean of 0.  Choose “Explore variable” and select the variable “Difference_in_Proportion_Looking” for analysis. The central tendency test value must be set to zero (though it was set to zero by default).
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch6/6.8expvar_window.png')
+```
+
+You will see that the t-statistic and p-value are identical to the ones obtained when we conducted a paired-samples t-test on the same data (in Chapter 6.7). Therefore, a paired-samples t-test conducted on two samples is equivalent to a one-sample t-test run on the difference scores (calculated on the two samples) compared against 0.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch6/6.8expvar_hyptest.png')
+```
