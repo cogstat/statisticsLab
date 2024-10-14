@@ -389,4 +389,85 @@ ___
 
 How to do it in JAMOVI
 
+## CogStat
 
+### Goals
+
+In this chapter we will use CogStat to:
+
+- Perform an independent-samples t-test
+
+- Graph the data
+
+
+### Experiment background
+
+Schroeder and Epley (2015) conducted an experiment to determine whether a person’s speech (i.e., vocal tone, cadence, and pitch) communicates information about their intellect better than their written words (even if they are the same words as in the speech).
+
+To conduct this study, the authors randomly assigned 39 professional recruiters for Fortune 500 companies to one of two conditions. In the audio condition, participants listened to audio recordings of a job candidate’s spoken job pitch. In the transcript condition, participants read a transcription of the job candidate’s pitch. After hearing or reading the pitch, the participants rated the job candidates on three dimensions: intelligence, competence, and thoughtfulness. These ratings were then averaged to create a single measure of the job candidate’s intellect, with higher scores indicating the recruiters rated the candidates as higher in intellect. The participants also rated their overall impression of the job candidate (a composite of two items measuring positive and negative impressions). Finally, the participants indicated how likely they would be to recommend hiring the job candidate (0 - not at all likely, 10 - extremely likely).
+
+So, what happened? Did the recruiters think job applicants were smarter when they read the transcripts, or when they heard the applicants speak? We have the data, we can find out.
+
+### Performing an independent-samples T-test
+
+First, let’s open the relevant data file; called “SchroederEpley2015data” in CogStat. For our analysis, we will focus on only one of the three measures mentioned above: intellect. We want to know if perceived intellect is different in the audio condition (where recruiters listened to a job pitch) than in the transcript condition (where recruiters read a transcript of a job pitch).
+
+To compare two groups in CogStat, choose the “Compare groups” analysis (Ctrl + G). Remember, that in CogStat we always choose tasks to explore relations and answer questions, instead of choosing one exact analysis. So depending on whether the assumptions are met or not the corresponding test will be chosen, which might not result in an independent-samples t-test.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch7/7.3comparegroups_icon.png')
+```
+
+or
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch7/7.3comparegroups_menu.png')
+```
+
+Select “intellect” as the dependent variable and “CONDITION” as “Group”, then press “OK”. 
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch7/7.3comparegroups_window.png')
+```
+
+The output is very similar to our previous examples and can be interpreted similarly. First, take a look at the raw data.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch7/7.3comparegroups_raw.png')
+```
+
+In the first section, the number of participants is shown in both the audio and transcript conditions. A plot with individual datapoints is also provided, which displays the positions of raw data points.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch7/7.3comparegroups_plot.png')
+```
+
+In Sample properties, there are descriptives for both conditions, as well as standardised effect sizes are provided.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch7/7.3comparegroups_sp.png')
+```
+
+Here a boxplot shows the individual data’s attributes.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch7/7.3comparegroups_boxplot.png')
+```
+
+Population properties shows the 95% confidence intervals as well as the Hedges’g value, just like in the paired-samples t-test in the previous task. The two groups and their confidence intervals are graphed.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch7/7.3comparegroups_CI.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch7/7.3comparegroups_CIplot.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch7/7.3comparegroups_hyptest.png')
+```
+
+For checking normality a Shapiro-Wilk normality test was conducted on both conditions. As you see within the hypothesis test results there is a section dedicated to Levene’s test. The value associated with the Levene’s test is W = 1.20, p =0.281. Since it is not significant the assumption for homogeneity of variance is not violated. As neither normality nor homogeneity is violated an independent samples t-test can be conducted.
+
+The result of the independent samples t-test is t(37)=-3.53, p=0.001.  What does this mean? We can put our findings into words: Recruiter ratings for audio job pitches are 2.04 points higher than ratings for transcripts of pitches and this difference is significant.
