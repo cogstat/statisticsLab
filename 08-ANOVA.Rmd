@@ -653,4 +653,122 @@ Using this lab’s data set, think about the following question: What if partici
 
 How to do it in JAMOVI
 
+## CogStat
 
+### Goals
+
+In this lab, we will use CogStat to:
+
+- Perform a One-Factor Analysis of Variance (ANOVA) and Graphing the data
+
+- Planned comparisons: Use t-tests to locate differences
+
+- Unplanned comparisons: Use a post-hoc test to locate differences
+
+### Experiment background
+
+As described at the beginning of this section in the general information part, researchers in the James et al. (2015) study sought to explore whether completing a visuospatial task (e.g., Tetris) after a memory was formed would interfere with the storage of the memory, and thereby reduce the frequency of subsequent intrusions. They hypothesised that only participants who complete a visuospatial task after reactivation of the traumatic memories would experience a reduction in intrusive memories. In comparison, simply completing a visuospatial task (without reactivation) or reactivation (without a visuospatial task) would not reduce the occurrence of intrusive memories. In other words, if you play Tetris shortly after you remember bad memories, you will experience intrusive memories less often in the future.
+
+The authors conducted an experiment ( N = 72, n = 18 per condition) wherein all participants viewed a series of video clips of graphic violence (e.g., a person getting hit by a van while using his phone as he crosses the road). Over the next 24 hours, participants recorded their intrusive memories. All groups were predicted to have an equal occurrence of intrusive memories during this pre-manipulation period (called Day 0).
+
+Experimental Task: After these 24 hours, the participants returned to the lab and completed the experimental task. The experimenters randomly assigned participants to ONE of the following conditions:
+
+1. No-task control: These participants completed a 10-minute music filler task.
+
+2. Reactivation + Tetris: These participants were shown a series of images from the trauma film to reactivate the traumatic memories (i.e., reactivation task). After a 10-minute music filler task, participants played the video game Tetris for 12 minutes.
+
+3. Tetris Only: These participants played Tetris for 12 minutes, but did not complete the reactivation task.
+
+4. Reactivation Only: These participants completed the reactivation task, but did not play Tetris.
+
+
+Dependent variable: Intrusive Memories: All participants were asked to record the number of intrusive memories they experienced over the next seven days (Days 1 to 7).
+
+### Performing a One-Factor Analysis of Variance (ANOVA) & Graphing the Data
+
+First, let’s open the relevant data file in CogStat, called “Jamesetal2015_Experiment2”.
+
+In this experiment, there was one important independent variable called “condition”, and it has four levels. These levels are called the following ways in the spreadsheet:
+
+1. No-task control
+
+2. Reactivation Plus Tetris
+
+3. Tetris only
+
+4. Reactivation only
+
+
+The dependent variable is coded in the column “Days_One_to_Seven_Number_of_Intrusions”. This represents the mean number of intrusions for that week. We are testing the hypothesis that the number of intrusive memories will differ among the groups (1-4). For now, we will not specify which group we think is going to have the highest or lowest number of memories, but rather we will test if there is a difference somewhere between these 4 groups.
+
+To compare more than two groups in CogStat, choose “Analysis” and then “Compare groups…” As before, CogStat will choose the suitable analysis after checking the assumptions.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch8/8.3comparegroups_menu.png')
+```
+
+or
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch8/8.3comparegroups_icon.png')
+```
+
+As mentioned, the independent variable will be “Condition” and the dependent variable will be “Days_One_to_Seven_Number_of_Intrusions”, so the following steps should be done.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch8/8.3comparegroups_window.png')
+```
+
+In the CogStat output, as always, first, we can take a look at the raw data.  Here all the conditions and the number of missing values can be seen. 
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch8/8.3comparegroups_raw.png')
+```
+
+We can see that in each condition observed, 18 cases are present, and there is no missing value, this information is also shown in a graph with individual datapoints. 
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch8/8.3comparegroups_rawplot.png')
+```
+
+From the graph, we can see that in conditions with reactivation plus tetris and tetris-only the values are lower than in the first two conditions. If we take a look at the descriptives in Sample properties we can see what these differences cause in the group means. 
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch8/8.3comparegroups_sampleprop.png')
+```
+
+Boxplots are also provided in this section to illustrate these differences. 
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch8/8.3comparegroups_boxplot.png')
+```
+
+Population properties provide confidence intervals in a numeric way as well as in graphs. 
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch8/8.3comparegroups_popprop.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch8/8.3comparegroups_medians_histo.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch8/8.3comparegroups_hyptest.png')
+```
+
+Finally, Population properties provide the results of the hypothesis test. CogStat checked the assumptions for the One-way ANOVA automatically. Normality has been checked in each group, and as all the Shapiro-Wilk tests were significant, the normality is violated in each case.
+
+As the Levene test is not significant, the variance of these four groups is not significantly different. That means that the assumption for homogeneity of variance is not violated.
+
+As normality was violated, CogStat chose the nonparametric alternative for a One-Way ANOVA, which is the Kruskal-Wallis test. The result is χ2(3, N = 72) = 13.56, p = .004. As the Kruskal-Wallis test is significant, that means that there are significant differences between groups. Since neither ANOVA nor the Kruskal-Wallis test specifies which groups differ significantly when post-hoc tests were carried out, CogStat provides these tests automatically when running an ANOVA. The following is the post-hoc table.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch8/8.3comparegroups_posthoc.png')
+```
+
+In this table, every possible group of 2 conditions is being compared. Notice that the table is redundant; it considers the comparison between no-task control and reactivation + tetris to be different from reactivation + tetris vs. no-task control. However, we know these are the same comparisons. So, we only need to look at half of the table, in essence.
+
+If you start with row 1, this row compares no-task control with reactivation + tetris. We see the corresponding p-value for this row is 0.002. Because this is less than our likely alpha level (0.05), this means that these two conditions are significantly different from one another. Where else is there a p-value that is less than 0.05?
+
+Reactivation + Tetris compared with Reactivation only has a p-value of 0.01. This is also a significant difference, as well as the difference between reactivation + Tetris and Tetris only (0.020). This means that, among the 4 groups, these differences were found: Reactivation + Tetris is different from no-task control,  reactivation + tetris is different from reactivation only, and reactivation only is different from reactivation + Tetris.
