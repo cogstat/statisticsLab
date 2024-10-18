@@ -713,3 +713,215 @@ Below is fictitious data representing the number of milliimeters a plant has gro
 How to do it in JAMOVI
 
 
+## CogStat
+
+### Goals
+
+In this lab, we will use CogStat to:
+
+1. Conduct and graph a Between-Subjects Two-Factor Analysis of Variance (ANOVA)
+
+2. Calculate simple effects
+
+3. Conduct and graph a Repeated Measures Two-Factor Analysis of Variance (ANOVA)
+
+### Experiment background
+
+The Rosenbaum, Mama, and Algom (2017) paper asked whether sitting versus standing would influence a measure of selective attention, the ability to ignore distracting information. Selective attention here is measured as performance on the Stroop task.
+
+In a typical Stroop experiment, subjects name the colour of words as fast as they can. The trick is that sometimes the colour of the word is the same as the name of the word, and sometimes it is not.
+
+The design of the study was a 2x2 design. The first independent variable was congruency (congruent vs incongruent). The second independent variable was posture (sitting vs. standing). The dependent variable was reaction time (RT) to name the word.
+
+### Conduct a Between-Subjects Two-Factor Analysis of Variance (ANOVA)
+
+Open the data file we will use this section, called “stroopsit”. Notice that in this file, there are 200 rows (corresponding to 200 participants). Each subject is categorised according to two independent variables: posture (whether they were in the standing or sitting condition), and congruency (whether the stimuli they received were congruent or incongruent). In this application, we are treating the design as between-subjects. This means each participant only experienced one of the following four conditions:
+
+1. congruent stand
+
+2. incongruent stand
+
+3. congruent sit
+
+4. incongruent sit
+
+
+By running the ANOVA we would like to find out whether Congruency or Posture have a main effect on Reaction time. As well as we would like to know if there is a relation between these two variables.
+
+Now, let’s run our Two-Factor ANOVA in CogStat. To do this, choose “Analysis” then “Compare groups…”
+
+Select “RT” as “Dependent variable” then “Congruency” and “Posture” as “Groups”, and finally,  hit “OK”.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch10/10.3comparegroups_window.png')
+```
+
+Raw data illustrates the different groups on a graph. As can be seen, there are four groups based on which group a person belongs to in Congruency and Posture.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch10/10.3comparegroups_raw.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch10/10.3comparegroups_plot.png')
+```
+
+Sample properties provide the descriptives and boxplots for each group.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch10/10.3comparegroups_descriptives.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch10/10.3comparegroups_boxplot.png')
+```
+
+Population properties show the confidence intervals, as well as provide the results of the hypothesis test.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch10/10.3comparegroups_popprop.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch10/10.3comparegroups_CI.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch10/10.3comparegroups_hyptest.png')
+```
+
+This last section gives us the answer to our questions: 
+
+1. There is no main effect of posture, F(1, 196)=2.45, p=0.119 (it is not significant)
+
+2. There is a main effect of congruency, F(1, 196)=43.76, p<0.001 where (from looking at the plot) incongruent stimuli were processed with a longer reaction time than congruent stimuli.
+
+3. There is no interaction between posture and congruency, F(1, 196)=0.49, p=0.484 (it is not significant)
+
+### CogStat: Display options…
+
+In CogStat with the function “Display options..” you can set how you would like your factors to appear. 
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch10/10.4CGwindow_displayop.png')
+```
+
+After choosing “Display options…” you get some opportunities to change how the factors will be displayed on the graphs. 
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch10/10.4displayoption_window.png')
+```
+
+You can set the minimum and maximum values of axis Y. You can choose some or all the variables to be displayed in different colours. Choose the variables you would like to colour as “Group(s) displayed with colours and hit “OK”. Each factor will be colored differently in the graphs. 
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch10/10.4display_plot.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch10/10.4display_boxplot.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch10/10.4display_CIplot.png')
+```
+
+By choosing variables as “Group(s) displayed in panels” each variable and its datapoints will be displayed in a different graph, as shown in the pictures below.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch10/10.4display1congruent&sit.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch10/10.4display1congruent&sit_boxplot.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch10/10.4display1congruent&sit_CI.png')
+```
+
+### Conduct a Repeated Measures Two-Factor Analysis of Variance (ANOVA)
+
+Next, we will use data from the same experiment but will treat it as a repeated measures (within-subjects) design (just as in the original experiment). This means each person in the study experienced all four conditions. To start, we need the modified version of the previous dataset. This data file is called “stroopsit_RM” and is arranged for a repeated-measures design. Load the data into CogStat and notice that each person is represented by a single row, and the columns correspond to the four conditions.
+
+We have to mention here that the purpose of this manipulation is to provide an easy-to-access and easy-to-understand example. In real life, manipulating the dataset in such ways is unacceptable, because it would make the correctness of the analysis questionable. Based on the study design you can have data that is between or within-subject, or mixed, but between-subject data cannot be handled as within-subject, and within-subject data cannot be handled as between-subject. This is because in a between-subject design different groups are assigned only in one condition and their result is compared to other groups. In a within-subject design, every participant can experience every condition, so in the dataset more datapoint belong to one person, and a participants’ results are compared to their results in other conditions, so  this design works with repeated measures.
+
+To run a repeated measures ANOVA choose “Analysis” and then “Compare repeated measures variables and groups…” (Ctrl + M).
+
+In this appearing dialogue choose “Factors…” to set the factors.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch10/10.5CRMV_window_factors.png')
+```
+
+As you already know, in this new dialogue that just appeared, factors can be added, modified and removed. Choose “Add factor”.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch10/10.5CRMV_factors_window.png')
+```
+
+We will have two factors, and in each, we will set two levels. Name the first factor “Congruency” and the second “Posture”.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch10/10.5CRMV_setfactors.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch10/10.5CRMV_factors_set.png')
+```
+
+
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch10/10.5CRMV_2factors_set.png')
+```
+
+Now that all the factors needed are set, hit “OK”.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch10/10.5CRMV_dependents_set.png')
+```
+
+The available variables must be paired with the factors set in the dependent variable part of the dialogue. When choosing the variables available pay attention to the order and consistency of the pairing. For example, congruency 1 should always be the congruent condition, and posture 1 should always be the standing condition. After setting the variables, hit “OK”. 
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch10/10.5CRMV_dependents_paired.png')
+```
+
+As always raw data shows all the cases, as well as missing values and provides a graph for illustration.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch10/10.5CRMV_raw.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch10/10.5CRMV_plot.png')
+```
+
+In sample properties, we got the most important descriptive statistics and boxplots graphing the individual values.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch10/10.5CRMV_descriptives.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch10/10.5CRMV_boxplot.png')
+```
+
+In population properties, the confidence intervals can be observed and lastly the hypothesis test is included, too.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch10/10.5CRMV_CI.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch10/10.5CRMV_CI_plot.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch10/10.5CRMV_hyptest.png')
+```
+
+The result of the repeated measures ANOVA is: F(1, 49) = 342.45, p < 0.001. From the plot, we can see that incongruent words produced longer RTs than congruent words. We also see that sitting produced longer RTs than standing. As for the interaction, you can see that the difference between congruent and incongruent is more pronounced (larger) in the sitting condition than in the standing condition.
+
+At this moment additional post-hoc tests are not available for the repeated measure two-factor ANOVA, but it is a priority during our software development, so the next update will likely provide you with post hoc tests as well.
