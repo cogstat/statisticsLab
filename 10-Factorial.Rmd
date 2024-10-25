@@ -870,7 +870,9 @@ knitr::include_graphics('img/ch10/10.5CRMV_setfactors.png')
 knitr::include_graphics('img/ch10/10.5CRMV_factors_set.png')
 ```
 
-
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch10/873.png')
+```
 
 ```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch10/10.5CRMV_2factors_set.png')
