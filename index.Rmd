@@ -337,7 +337,55 @@ The software is free to download from the official CogStat webpage (https://www.
 
 There are many datasets used in this manual, and the majority of it is real data from the original manual by Matthew J. C. Crump (https://github.com/CrumpLab/statistics/tree/master/data), while others are generated with spreadsheet software. All the datasets that will be used in this manual are available in the CogSat package in the form of demo files. (Data used in this manual can be found in the folder “Haasz. Answering questions with data Lab Manual”.) These types of datasets can be loaded from there, in the following ways shown in the pictures below.
 
+```{r 2rlogo, echo=FALSE,dev='png'}
+knitr::include_graphics('img/intro/opendemodata_menu.png')
+```
 
+or
 
+```{r 2rlogo, echo=FALSE,dev='png'}
+knitr::include_graphics('img/intro/opendemodata_icon.png')
+```
 
+After choosing the option “Data” and “Open demo data file” you can reach any demo data from the CogStat package. With “Open data file”, you can use any other dataset you have downloaded that is in the right format that CogStat can handle. You can also load data from different programs with the copy-paste function, using the clipboard. Simply select and copy the data you would like to use and paste it into the CogStat window. It can be especially important when you do not want to use the whole dataset for the analysis, so only some parts will be copied and pasted. Also, to open a file, you can drag and drop it into the CogStat window, too.
 
+##### Setting the measurement levels
+
+CogStat cannot be used for editing your data, meaning you have to use a spreadsheet or another statistical software to store and edit it. (It is another reason why the copy-and-paste function is helpful.) Before loading your data into CogStat, it is advised to check it and set all the measurement levels for all variables. Many file format is supported (e.g., Excel spreadsheet, OpenDocument spreadsheet, Text files, SPSS, Japs, Jamovi files, and others… ) (for more: https://doc.cogstat.org/Handling-data) (If you use the demo datafiles that belong to this manual, you will see that we set the measurement levels for you.)
+
+There are two methods to set measurement levels in the dataset. If the data is stored in a spreadsheet format (e.g. Microsoft Excel, Google Spreadsheet, etc.), a second row should be added, including int, ord, and nom for the interval, ordinal, and nominal measurement levels (second row, after the variable names). Note that ratio variables are also handled as intervals, and string variables will be set to nominal automatically.
+
+```{r 2rlogo, echo=FALSE,dev='png'}
+knitr::include_graphics('img/intro/measurementlevels.png')
+```
+
+Another way to set the measurement level is to use other statistical software, where you can adjust them, and after saving the data, you can open it with CogStat. For example, in SPSS, you can set the measurement levels and then open the file into the CogStat window. However, be aware that the measurement levels cannot be set in every statistical software, so in this case, information about measurement levels will be missing when importing your data from such a source (e.g. R files or STATA files). If measurement levels for the dataset are not set before loading it into CogStat, CogStat will set it to unknown (unk) and, in most cases, will handle it as interval variables. Analysis can be run like this, but if it is not your intention to have your data handled as interval variables, then set the right measurement levels. 
+For more on handling data: https://doc.cogstat.org/Handling-data.
+
+If you need additional information or would like to learn more about CogStat, there are many sources:
+
+- A brief description of how to start using the software (https://doc.cogstat.org/Quick-Start-Tutorial)
+
+- The user documentation of the software (https://doc.cogstat.org/)
+
+- Advantages of using CogStat (https://docs.google.com/presentation/d/1dIb6f3yPvr8stMLS7b7qcBsgloqbcQj2b55NUT4D9vc/edit#slide=id.p)
+
+- Using CogStat for your analysis (https://docs.google.com/presentation/d/1_rnHhyD3pF9BZuqCkcFLWKhAbX1DfS8T5q-TxogqpZA/edit#slide=id.p)
+
+### Navigating in the manual
+
+From the next section of this Manual, you will solve specific problems through eleven chapters with the help of CogStat. There are some CogStat features that, despite being fundamental and useful, only appear in later chapters. It is because we tried to follow the order of the other software guides employed in the manual, for transparency. On the other hand, automatic data analysis and CogStat have a unique philosophy which is often not in line with the manual data analysis point of view. This elemental difference in methodology might also contribute to some parts being located unnaturally. To help with finding the personally relevant parts for everyone, we named the chapters and subchapters carefully, so they cover their most important contents properly. It is advised to navigate in the table of contents if there is a specific feature of CogStat you need to find. 
+
+There are many additional features and analyses to CogStat that are not included in this manual but are worth mentioning, for example, regressions, power analysis, reliability analysis (internal consistency reliability analysis and interrater reliability analysis) and (behavioural data) diffusion analysis. Results of Bayesian hypothesis tests are also provided in most cases and pivot tables can be created… Some other important features that are not mentioned in the following chapters are that in almost every dialogue a help button is provided with useful instructions. Another important feature is that spreadsheet software can be used as data view. This means that with every saved change in your spreadsheet, data also changes in CogStat and the analysis can be rerunned. These settings are not automatic, they must be set.
+
+```{r 2rlogo, echo=FALSE,dev='png'}
+knitr::include_graphics('img/intro/reloadfile_menu.png')
+```
+
+or
+
+```{r 2rlogo, echo=FALSE,dev='png'}
+knitr::include_graphics('img/intro/reload_icon.png')
+```
+
+With “Reload the actual data file”, the data that has been changed and saved in the spreadsheet software will also change in CogStat. With “Reload data file when changed”, the previous analysis will be rerunned with the changes made. 
