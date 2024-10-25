@@ -361,4 +361,93 @@ ___
 
 How to do it in JAMOVI
 
+## CogStat
 
+### Goals
+
+In this lab, we will use CogStat to:
+
+- Conduct and graph a Mixed-Factorial Analysis of Variance (ANOVA)
+
+### Experiment background
+
+People take pictures of things all the time on their phones. Barasch et al. (2017) asked whether taking pictures of things had consequences for later memory of those experiences.
+
+In this experiment, participants visited a museum exhibit. Half the participants could use a camera to document their visit, while the other half were not, all while listening to an audio tour of the exhibit. At the end of the visit, everyone was given two memory tests (visual and audio) for the content they saw and heard, respectively.
+
+This is a 2x2 Mixed-Factorial design. The individuals in the photo group are different from the individuals in the no photo group (this is our between-subjects variable and it is called condition). At the same time, the “memory test_type” (audio and visual) is our within-subjects variable since everyone took both types of tests.
+
+### Conduct a Mixed-Factorial Analysis of Variance (ANOVA)
+
+Using CogStat, open the data  “study1_data_photo”. Scroll through the file. Find the variable named “condition”. This variable tells you if the row in question corresponds to someone who was or was not allowed to use a camera. Now, find the variables “apercent” and “vpercent”. These variables refer to the percentage score received by everyone on the audio and visual memory tests, respectively. Notice that every row in the data file only has one “condition” label. That is, you were either in the camera or no-camera condition. But, everyone in the file has scores for both tests, audio and visual. This is the way your data must be structured to perform a mixed-factorial ANOVA. Now, let’s begin.
+
+To start the analysis, choose Compare repeated measures variables and groups (Ctrl + M). 
+Hit “Factors…” in the dialogue.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch11/11.3CRMVG_window.png')
+```
+
+Choose “Add factor”.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch11/11.3CRMVG_factorswindow.png')
+```
+
+Here a within-subject variable will be used as a factor, with 2 levels. Name the factor as test_type and set the number of levels to two. Finally, hit “OK”.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch11/11.3CRMVG_setfactor.png')
+```
+
+Test_type 1 will  be “apercent” and Test_type 2 will be “vpercent”. Condition is a between-subject variable (one person only belongs to one condition), place it into the Group field. After that, hit “OK”.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch11/11.3CRMVG_setvariables.png')
+```
+
+In the output, first, the raw data shows the observed and missing values, as well as it provides a graph with individual data.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch11/11.3CRMVG_raw.png')
+```
+
+Sample properties include the most important descriptive statistics for all conditions, as well as boxplots with the individual data.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch11/11.3CRMVG_descriptives.png')
+```
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch11/11.3CRMVG_plot.png')
+```
+
+In Population properties population parameter estimations can be seen with the confidence intervals. This information is also shown in a graph.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch11/11.3CRMVG_CI_plot.png')
+```
+
+The last section of Population parameters is the hypothesis test, which shows the result of the mixed ANOVA. From results we see that the main effect of condition is not significant (F(1,295)=2.26, p=0.134, the main effect of test type turned out to be significant (F(1,295)=100.23, p< 0.001, and finally the interaction between condition and test type is also significant (F(1,295)=13.79, p<0.001.
+
+```{r , echo=FALSE,dev='png'}
+knitr::include_graphics('img/ch11/11.3CRMVG_hyptest.png')
+```
+
+You might notice that in this analysis there were not any assumptions tested or post-hoc tests run as before in previous ANOVA analyses, it is because these functions are not implemented yet, in the current CogStat package. (CogStat2.5_rc)
+
+### REFERENCES
+
+  Krajcsi, A. (2021, February 16). Advancing best practices in data analysis with automatic and optimized output data analysis software. https://doi.org/10.31234/osf.io/hnmsq
+
+  Roediger III, H. L., & Karpicke, J. D. (2006). Test-Enhanced Learning: Taking Memory Tests Improves Long-Term Retention on JSTOR. Psychological Science, 249. https://doi.org/40064526
+
+  Mehr, S. A., Song, L. A., & Spelke, E. S. (2016). For 5-Month-Old Infants, Melodies Are Social. Psychological Science. https://doi.org/10.1177/0956797615626691
+
+  Kessler, H., Schmidt, A. C., James, E. L., Blackwell, S. E., von Rauchhaupt, M., Harren, K., ... & Holmes, E. A. (2020). Visuospatial computer game play after memory reminder delivered three days after a traumatic film reduces the number of intrusive memories of the experimental trauma. Journal of Behavior Therapy and Experimental Psychiatry, 67, 101454.
+
+  Schroeder, J., & Epley, N. (2015). The sound of intellect: Speech reveals a thoughtful mind, increasing a job candidate’s appeal. Psychological science, 26(6), 877-891.
+
+  Kessler, H., Schmidt, A. C., James, E. L., Blackwell, S. E., von Rauchhaupt, M., Harren, K., ... & Holmes, E. A. (2020). Visuospatial computer game play after memory reminder delivered three days after a traumatic film reduces the number of intrusive memories of the experimental trauma. Journal of Behavior Therapy and Experimental Psychiatry, 67, 101454.
+
+  Rosenbaum, D., Mama, Y., & Algom, D. (2017). Stand by your stroop: Standing up enhances selective attention and cognitive control. Psychological science, 28(12), 1864-1867.
