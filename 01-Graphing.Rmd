@@ -809,7 +809,7 @@ When we measure things, we often get so much data that it is almost impossible t
 
 We will start every task with the same first step, which is, to load the dataset into CogStat. In this part, we will use the dataset “Film_Permits” (https://opendata.cityofnewyork.us/). As mentioned in the previous chapter, to load the data into CogStat, choose “Data”, then “Open demo data File…”.  It is also possible to drag and drop the file or copy and paste it to the CogStat window. After loading the dataset, you will see the following things, as displayed in the picture above:
 
-```{r , echo=FALSE,dev='png"}
+```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch1/CS_homepage.png'}
 ```
 
@@ -826,11 +826,11 @@ Also, it is always useful and recommended to use short variable names with Engli
 You might see error messages that are not related to your imported data, for example, a message like “Oops, something went wrong.” will be sent by CogStat if an analysis cannot be completed because of a software error. Depending on your preferences, you can ask CogStat to give you detailed error messages related to these types of error messages. To change these settings select the option “Preferences” (Ctrl+Shift+P) and pick “On” or “Off” at “Detailed error message”.  Turning the detailed error messages on can help if you find a bug and would like to report it to us, as with bug reports we always ask for detailed error messages. 
 If you would like to get more information on how to report a bug visit the following link: https://doc.cogstat.org/Report-a-bug)
 
-```{r , echo=FALSE,dev='png"}
+```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch1/preferences.png'}
 ```
 
-```{r , echo=FALSE,dev='png"}
+```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch1/detailederror.png'}
 ```
 
@@ -845,17 +845,17 @@ Do you have any guesses? Is it Manhattan, Brooklyn, Queen’s, or Staten Island?
 
 To do that, return to our dataset, and select the “Explore variable” analysis (Ctrl+1).  You can choose it from the Quick Access Toolbar or the “Analysis” menu.
 
-```{r , echo=FALSE,dev='png"}
+```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch1/explorevariable1.png'}
 ```
 
-```{r , echo=FALSE,dev='png"}
+```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch1/explorevariable2.png'}
 ```
 
 From “Analysis” you can find all the available analyses, to choose from. Keep in mind that there are no specific tests or graph names to choose from here, as in all cases a task can be chosen. After choosing “Explore variable” a dialogue appears.
 
-```{r , echo=FALSE,dev='png"}
+```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch1/explorevariables.png'}
 ```
 
@@ -867,11 +867,11 @@ Making the result interpretation even easier, the output’s structure in almost
 
 In the first main section of the output called “Raw data”, we can see a histogram with the Boroughs and the frequencies of film permits requested. This information also appears with numbers and percentages in the “Sample properties” part, the second main part of the CogStat output. 
 
-```{r , echo=FALSE,dev='png"}
+```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch1/exp.graph1.png'}
 ```
 
-```{r , echo=FALSE,dev='png"}
+```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch1/exp.des..png'}
 ```
 
@@ -881,15 +881,15 @@ After taking a look at this chart and table we can easily answer our original qu
 
 The variable “Category” gives us some information about what kind of films are being made. To find out, choose the menu “Explore variable” and remove “Borough” from the selected variables and add the variable “Category” to it, then press “ok”. 
 
-```{r , echo=FALSE,dev='png"}
+```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch1/expvar_rawdata_cases.png'}
 ```
 
-```{r , echo=FALSE,dev='png"}
+```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch1/expvar_hitogr(category).png'}
 ```
 
-```{r , echo=FALSE,dev='png"}
+```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch1/expvar_sampleprop(cat).png'}
 ```
 
@@ -899,14 +899,14 @@ In the “Raw data” part of the output, we can see, that most films were reque
 
 If we would like to know what kind of sub-categories are there, we only have to do the same thing as in the previous task, with the variable “SubCategoryName”, so choose “Explore variable” and select the variable “SubCategoryName” for analysis. This way we got our histogram and our frequency results.
 
-```{r , echo=FALSE,dev='png"}
+```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch1/expvar_histogram(subcategory).png'}
 ```
 
 As you see with long variable names the titles are pretty hard to see, because of this reason we recommend you name your data with shorter names. We would like to add, that this problem is noticed and we are working on it to solve the readability of titles with long names. 
 
 
-```{r , echo=FALSE,dev='png"}
+```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch1/Expvar_sampleprop(subcategory).png'}
 ```
 
@@ -918,29 +918,29 @@ We know that several different films are requested in different categories as we
 
 Suppose, we want to make a plot for Categories by different Boroughs in CogStat. In that case, we can choose the “Compare groups” analysis (Ctrl+G) and select “Borough” as “Group” and “Category” as “Dependent variable” from the “Variables available” table and press “OK”. 
 
-```{r , echo=FALSE,dev='png"}
+```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch1/comparegroups.png'}
 ```
 
-```{r , echo=FALSE,dev='png"}
+```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch1/comparegroups2.png'}
 ```
 
 The first thing shown in the output is the raw data. Here, we can see each of the observed cases of Boroughs (groups) and their missing data. 
 
-```{r , echo=FALSE,dev='png"}
+```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch1/compraw.png'}
 ```
 
 When we look at the relations of more variables, CogStat provides us with a mosaic plot, looking somewhat like this, still in the raw data section of the output. 
 
-```{r , echo=FALSE,dev='png"}
+```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch1/compare_mpsaic.png'}
 ```
 
 This plot might look a little crowded since we have many categories for both variables and many of the names are quite long. Having fewer categories and shorter variable names makes every plot more pleasant-looking. We also get tables that show us the answer to our question, like these contingency tables.
 
-```{r , echo=FALSE,dev='png"}
+```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch1/comparecont.png'}
 ```
 
@@ -952,11 +952,11 @@ Graphs shown in the CogStat output are designed in a way to reflect the measurem
 
 If you are not happy with the look of the plot CogStat provided by default, there is an option to change the appearance of graphs, but this will not influence the design of the lines mentioned earlier. To manage this, select preferences, then chart theme. (e.g., ggplot is a very similar theme to the one used in R).
 
-```{r , echo=FALSE,dev='png"}
+```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch1/preferences2.png'}
 ```
 
-```{r , echo=FALSE,dev='png"}
+```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch1/preferences_charttheme.png'}
 ```
 
@@ -968,7 +968,7 @@ Gapminder (https://www.gapminder.org/) is an organisation that collects some rea
 
 For the next part, we will use the dataset “gapminder”, so load the data into CogStat. We would like to know how long people live all around the world according to this dataset. To find out the answer we will make a histogram. We have many numbers for life expectancy in the column “lifeExp”. This is a big sample, full of numbers for 142 countries, as data were collected throughout several years. It is easy to make a histogram to view the distribution, but this task is a little different from the previous ones shown in this chapter. Now we work with interval variables and not nominals as before. First, select “Explore variable” then select the variable “lifeExp” and press “OK”. This will give us a histogram of the distribution of life expectancy at the end of the Sample properties part.
 
-```{r , echo=FALSE,dev='png"}
+```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch1/lieexhisto.png'}
 ```
 
@@ -981,19 +981,19 @@ It is a bit different if we want to know how life expectancy changes in one coun
 In CogStat, we can choose “Explore relation of variable pair” and put “lifeExp”  and “year” from “Available variables” to “Selected variables” and press “OK”. 
 
 
-```{r , echo=FALSE,dev='png"}
+```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch1/variablepair1.png'}
 ```
 
 or
 
-```{r , echo=FALSE,dev='png"}
+```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch1/variablepair2.png'}
 ```
 
 At the top of the output, we can see a scatterplot with the raw data and the trend of life expectancy in Hungary. We can say that the Hungarian life expectancy has been rising over the years and it especially looks more promising since the 1990s.
 
-```{r , echo=FALSE,dev='png"}
+```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch1/variablepairplot.png'}
 ```
 
@@ -1001,7 +1001,7 @@ knitr::include_graphics('img/ch1/variablepairplot.png'}
 
 In the Results menu, you can find some functions that make handling the results pane easier. For example, you can delete it with the “Clear results” menu.
 
-```{r , echo=FALSE,dev='png"}
+```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch1/menu_clearresults.png'}
 ```
 
@@ -1012,12 +1012,12 @@ If there is something specific you would like to find in the output choose “Fi
 
 As you already noticed, CogStat chooses what should be calculated or displayed. What if you wanted to run a different test instead of the one that runs automatically? First of all, following the recommendations of textbooks and methodological literature and careful considerations of the developers, CogStat provides calculations that are reasonable default values. Using a recommended or consensual pipeline is a good thing: too much subjectivity in choosing the methods during data analysis or in interpreting the results is one of the causes of unreliable and hard or even impossible-to-replicate research settings and outcomes. On the other hand, you may have additional considerations for which the default results are not appropriate. In those cases, you may use a classic, individual analysis software. If you think that the default analysis pipeline that CogStat provides should be modified or updated, you can contact us and we will consider modifying the analysis pipeline in a future CogStat release. (for more: https://doc.cogstat.org/Suggest-a-new-feature)
 
-```{r , echo=FALSE,dev='png"}
+```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch1/feature.png'}
 ```
 
 You might think that CogStat calculated your result incorrectly. In some cases, CogStat calculates things intentionally differently than other software packages. In those cases, the developers think that it is better to use a different method than what you find in other software packages (find more information at https://doc.cogstat.org/Differences-in-calculations-between-CogStat-and-other-programs). In some other cases, the modules CogStat relies on may include a bug, and the calculation is incorrect. If you think that this is the case, you can report the bug. (for more: https://doc.cogstat.org/Report-a-bug).
 
-```{r , echo=FALSE,dev='png"}
+```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch1/menu_reportaproblem.png'}
 ```
