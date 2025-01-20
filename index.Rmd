@@ -337,13 +337,13 @@ The software is free to download from the official CogStat webpage (https://www.
 
 There are many datasets used in this manual, and the majority of it is real data from the original manual by Matthew J. C. Crump (https://github.com/CrumpLab/statistics/tree/master/data), while others are generated with spreadsheet software. All the datasets that will be used in this manual are available in the CogSat package in the form of demo files. (Data used in this manual can be found in the folder “Haasz. Answering questions with data Lab Manual”.) These types of datasets can be loaded from there, in the following ways shown in the pictures below.
 
-```{r 2rlogo, echo=FALSE,dev='png'}
+```{r, echo=FALSE,dev='png'}
 knitr::include_graphics('img/intro/opendemodata_menu.png')
 ```
 
 or
 
-```{r 2rlogo, echo=FALSE,dev='png'}
+```{r, echo=FALSE,dev='png'}
 knitr::include_graphics('img/intro/opendemodata_icon.png')
 ```
 
@@ -355,7 +355,7 @@ CogStat cannot be used for editing your data, meaning you have to use a spreadsh
 
 There are two methods to set measurement levels in the dataset. If the data is stored in a spreadsheet format (e.g. Microsoft Excel, Google Spreadsheet, etc.), a second row should be added, including int, ord, and nom for the interval, ordinal, and nominal measurement levels (second row, after the variable names). Note that ratio variables are also handled as intervals, and string variables will be set to nominal automatically.
 
-```{r 2rlogo, echo=FALSE,dev='png'}
+```{r, echo=FALSE,dev='png'}
 knitr::include_graphics('img/intro/measurementlevels.png')
 ```
 
@@ -378,13 +378,13 @@ From the next section of this Manual, you will solve specific problems through e
 
 There are many additional features and analyses to CogStat that are not included in this manual but are worth mentioning, for example, regressions, power analysis, reliability analysis (internal consistency reliability analysis and interrater reliability analysis) and (behavioural data) diffusion analysis. Results of Bayesian hypothesis tests are also provided in most cases and pivot tables can be created… Some other important features that are not mentioned in the following chapters are that in almost every dialogue a help button is provided with useful instructions. Another important feature is that spreadsheet software can be used as data view. This means that with every saved change in your spreadsheet, data also changes in CogStat and the analysis can be rerunned. These settings are not automatic, they must be set.
 
-```{r 2rlogo, echo=FALSE,dev='png'}
+```{r, echo=FALSE,dev='png'}
 knitr::include_graphics('img/intro/reloadfile_menu.png')
 ```
 
 or
 
-```{r 2rlogo, echo=FALSE,dev='png'}
+```{r, echo=FALSE,dev='png'}
 knitr::include_graphics('img/intro/reload_icon.png')
 ```
 
