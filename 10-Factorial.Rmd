@@ -829,15 +829,15 @@ knitr::include_graphics('img/ch10/10.4display_CIplot.png')
 By choosing variables as “Group(s) displayed in panels” each variable and its datapoints will be displayed in a different graph, as shown in the pictures below.
 
 ```{r , echo=FALSE,dev='png'}
-knitr::include_graphics('img/ch10/10.4display1congruent&sit.png')
+knitr::include_graphics('img/ch10/10.4display1congruentsit.png')
 ```
 
 ```{r , echo=FALSE,dev='png'}
-knitr::include_graphics('img/ch10/10.4display1congruent&sit_boxplot.png')
+knitr::include_graphics('img/ch10/10.4display1congruentsit_boxplot.png')
 ```
 
 ```{r , echo=FALSE,dev='png'}
-knitr::include_graphics('img/ch10/10.4display1congruent&sit_CI.png')
+knitr::include_graphics('img/ch10/10.4display1congruentsit_CI.png')
 ```
 
 ### Conduct a Repeated Measures Two-Factor Analysis of Variance (ANOVA)
