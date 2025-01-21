@@ -307,7 +307,7 @@ The link to the video is [https://www.youtube.com/watch?v=WsbnV0t7FE4](https://w
 
 ## JAMOVI
 
-## Answering Questions with Data in CogStat
+## CogStat
 
 (using CogStat 2.5rc)
 
