@@ -818,7 +818,6 @@ In CogStat, as you can see in the picture above, there are two separate areas or
 
 ### Warnings and error messages
 
-1.2.1 - Warnings and error messages
 There might be cases, like the one in the picture above, when you will see some warning or error messages. 
 “String variable conversion warning” and “Measurement level warning”: As in many other statistical software, in CogStat variables can be set to nominal, ordinal, or interval (Ratio data is also handled as interval). Since automatic data processing relies on measurement levels a lot, to decide what test to run on the variables, it is important to set the variable measurement levels beforehand. As you can see in the message, string variables are handled as nominal in CogStat. 
 Also, it is always useful and recommended to use short variable names with English characters only. (for more: https://doc.cogstat.org/Handling-data)
