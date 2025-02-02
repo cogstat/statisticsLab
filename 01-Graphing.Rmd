@@ -823,7 +823,7 @@ There might be cases, like the one in the picture above, when you will see some 
 Also, it is always useful and recommended to use short variable names with English characters only. (for more: https://doc.cogstat.org/Handling-data)
 
 You might see error messages that are not related to your imported data, for example, a message like “Oops, something went wrong.” will be sent by CogStat if an analysis cannot be completed because of a software error. Depending on your preferences, you can ask CogStat to give you detailed error messages related to these types of error messages. To change these settings select the option “Preferences” (Ctrl+Shift+P) and pick “On” or “Off” at “Detailed error message”.  Turning the detailed error messages on can help if you find a bug and would like to report it to us, as with bug reports we always ask for detailed error messages. 
-If you would like to get more information on how to report a bug visit the following link: https://doc.cogstat.org/Report-a-bug)
+If you would like to get more information on how to report a bug visit the following link: https://doc.cogstat.org/Report-a-bug
 
 ```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch1/preferences.png')
