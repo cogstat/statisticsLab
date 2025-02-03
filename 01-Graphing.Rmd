@@ -848,6 +848,8 @@ To do that, return to our dataset, and select the “Explore variable” analysi
 knitr::include_graphics('img/ch1/explorevariable1.png')
 ```
 
+or
+
 ```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch1/explorevariable2.png')
 ```
