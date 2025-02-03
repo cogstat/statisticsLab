@@ -741,6 +741,7 @@ Unlike the distributions mentioned earlier, the bell curve is continuous, which 
 ```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch4/4.5egiq.png')
 ```
+
 Picture from: (Wikipedia- https://en.wikipedia.org/wiki/Intelligence_quotient)
 
 Here it can be seen that most people are located around the mean, which is 100, and fewer and fewer people have higher or lower scores. The bins with the highest and lowest scores contain only a tiny percentage of people. 
