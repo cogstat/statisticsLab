@@ -1939,7 +1939,7 @@ The range is the minimum and maximum values in the set, we use the \texttt{range
 \end{Shaded}
 
 \begin{verbatim}
-## [1] -1.073517 26.807199
+## [1] -2.871189 21.284123
 \end{verbatim}
 
 \hypertarget{var-variance}{%
@@ -1954,7 +1954,7 @@ We can find the sample variance using \texttt{var}. Note, divides by (n-1)
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 19.03863
+## [1] 29.03241
 \end{verbatim}
 
 \hypertarget{sd-standard-deviation}{%
@@ -1969,7 +1969,7 @@ We find the sample standard deviation us SD. Note, divides by (n-1)
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 4.363327
+## [1] 5.388173
 \end{verbatim}
 
 Remember that the standard deviation is just the square root of the variance, see:
@@ -1981,7 +1981,7 @@ Remember that the standard deviation is just the square root of the variance, se
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 4.363327
+## [1] 5.388173
 \end{verbatim}
 
 \hypertarget{all-descriptives}{%
@@ -1998,7 +1998,7 @@ Let's put all of the descriptives and other functions so far in one place:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 1001.687
+## [1] 1075.571
 \end{verbatim}
 
 \begin{Shaded}
@@ -2018,7 +2018,7 @@ Let's put all of the descriptives and other functions so far in one place:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 10.01687
+## [1] 10.75571
 \end{verbatim}
 
 \begin{Shaded}
@@ -2028,7 +2028,7 @@ Let's put all of the descriptives and other functions so far in one place:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 9.363787
+## [1] 10.77822
 \end{verbatim}
 
 \begin{Shaded}
@@ -2038,7 +2038,7 @@ Let's put all of the descriptives and other functions so far in one place:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 6.847371
+## [1] 12.52104
 \end{verbatim}
 
 \begin{Shaded}
@@ -2048,7 +2048,7 @@ Let's put all of the descriptives and other functions so far in one place:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] -1.284259 20.425088
+## [1] -4.916261 25.243395
 \end{verbatim}
 
 \begin{Shaded}
@@ -2058,7 +2058,7 @@ Let's put all of the descriptives and other functions so far in one place:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 24.14328
+## [1] 23.84094
 \end{verbatim}
 
 \begin{Shaded}
@@ -2068,7 +2068,7 @@ Let's put all of the descriptives and other functions so far in one place:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 4.913581
+## [1] 4.882719
 \end{verbatim}
 
 \hypertarget{descriptives-by-conditions}{%
@@ -2097,7 +2097,7 @@ The slow way to do it would be like this:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 11.46668
+## [1] 6.878701
 \end{verbatim}
 
 \begin{Shaded}
@@ -2107,7 +2107,7 @@ The slow way to do it would be like this:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 8.0487
+## [1] 10.02321
 \end{verbatim}
 
 \begin{Shaded}
@@ -2117,7 +2117,7 @@ The slow way to do it would be like this:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 10.95541
+## [1] 9.461509
 \end{verbatim}
 
 \begin{Shaded}
@@ -2147,16 +2147,16 @@ We can easily do everything all at once using the \texttt{group\_by} and \texttt
 ## # A tibble: 10 x 2
 ##    conditions means
 ##    <chr>      <dbl>
-##  1 A          11.5 
-##  2 B           8.05
-##  3 C          11.0 
-##  4 D          11.3 
-##  5 E          11.9 
-##  6 F          12.1 
-##  7 G          12.9 
-##  8 H           7.44
-##  9 I           8.39
-## 10 J          10.3
+##  1 A           6.88
+##  2 B          10.0 
+##  3 C           9.46
+##  4 D           9.21
+##  5 E          10.2 
+##  6 F           9.99
+##  7 G          10.8 
+##  8 H           7.51
+##  9 I          11.8 
+## 10 J          11.1
 \end{verbatim}
 
 A couple things now. First, the print out of this was ugly. Let's fix that. we put the results of our code into a new variable, then we use \texttt{knitr::kable} to print it out nicely when we \texttt{knit} the document
@@ -2175,25 +2175,25 @@ A couple things now. First, the print out of this was ugly. Let's fix that. we p
 \hline
 conditions & means\\
 \hline
-A & 11.466677\\
+A & 6.878701\\
 \hline
-B & 8.048700\\
+B & 10.023212\\
 \hline
-C & 10.955411\\
+C & 9.461509\\
 \hline
-D & 11.342468\\
+D & 9.210803\\
 \hline
-E & 11.899382\\
+E & 10.160675\\
 \hline
-F & 12.128321\\
+F & 9.992076\\
 \hline
-G & 12.896229\\
+G & 10.822598\\
 \hline
-H & 7.441006\\
+H & 7.510089\\
 \hline
-I & 8.390580\\
+I & 11.799535\\
 \hline
-J & 10.266423\\
+J & 11.107007\\
 \hline
 \end{tabular}
 
@@ -2217,25 +2217,25 @@ The best thing about the \texttt{dplyr} method, is that we can add more than one
 \hline
 conditions & means & sds\\
 \hline
-A & 11.466677 & 3.631465\\
+A & 6.878701 & 4.523447\\
 \hline
-B & 8.048700 & 5.542235\\
+B & 10.023212 & 5.306193\\
 \hline
-C & 10.955411 & 3.144728\\
+C & 9.461509 & 3.207332\\
 \hline
-D & 11.342468 & 5.479936\\
+D & 9.210803 & 5.228930\\
 \hline
-E & 11.899382 & 4.366545\\
+E & 10.160675 & 5.578837\\
 \hline
-F & 12.128321 & 4.192824\\
+F & 9.992076 & 5.853884\\
 \hline
-G & 12.896229 & 4.401152\\
+G & 10.822598 & 4.480613\\
 \hline
-H & 7.441006 & 3.585007\\
+H & 7.510089 & 3.852131\\
 \hline
-I & 8.390580 & 4.887865\\
+I & 11.799535 & 5.363148\\
 \hline
-J & 10.266423 & 5.898361\\
+J & 11.107007 & 4.096706\\
 \hline
 \end{tabular}
 
@@ -2258,25 +2258,25 @@ We'll add the min and the max too:
 \hline
 conditions & means & sds & min & max\\
 \hline
-A & 11.466677 & 3.631465 & 6.139056 & 18.23230\\
+A & 6.878701 & 4.523447 & -2.2524282 & 14.94793\\
 \hline
-B & 8.048700 & 5.542235 & -2.131408 & 18.93623\\
+B & 10.023212 & 5.306193 & 0.7138949 & 20.21114\\
 \hline
-C & 10.955411 & 3.144728 & 7.039281 & 15.66498\\
+C & 9.461509 & 3.207332 & 2.4955828 & 14.91583\\
 \hline
-D & 11.342468 & 5.479936 & 2.077094 & 20.00671\\
+D & 9.210803 & 5.228930 & 1.2303815 & 15.73340\\
 \hline
-E & 11.899382 & 4.366545 & 5.314028 & 19.05931\\
+E & 10.160675 & 5.578837 & 2.4312104 & 17.73860\\
 \hline
-F & 12.128321 & 4.192824 & 6.309706 & 18.63544\\
+F & 9.992076 & 5.853884 & 0.0795464 & 19.96674\\
 \hline
-G & 12.896229 & 4.401152 & 7.864264 & 22.31657\\
+G & 10.822598 & 4.480613 & 2.7020894 & 15.07816\\
 \hline
-H & 7.441006 & 3.585007 & 2.043227 & 11.87649\\
+H & 7.510089 & 3.852131 & 2.0308414 & 12.32562\\
 \hline
-I & 8.390580 & 4.887865 & 1.282118 & 17.99908\\
+I & 11.799535 & 5.363148 & -1.3682072 & 17.16339\\
 \hline
-J & 10.266423 & 5.898361 & 2.257071 & 20.50792\\
+J & 11.107007 & 4.096706 & 4.6150854 & 15.41029\\
 \hline
 \end{tabular}
 
@@ -2956,7 +2956,7 @@ Tip 2: You can compute the correlation between two sets of random numbers, by fi
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.1610036
+## [1] 0.103288
 \end{verbatim}
 
 Running the above code will give different values for the correlation each time, because the numbers in x and y are always randomly different. We might expect that because x and y are chosen randomly that there should be a 0 correlation. However, what we see is that random sampling can produce ``fake'' correlations just by chance alone. We want to estimate the range of correlations that chance can produce.
@@ -2979,7 +2979,7 @@ We can do this using a \texttt{for} loop. The code below shows how to repeat eve
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 94.72575
+## [1] 120.505
 \end{verbatim}
 
 \begin{Shaded}
@@ -2989,7 +2989,7 @@ We can do this using a \texttt{for} loop. The code below shows how to repeat eve
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 400.2591
+## [1] 412.1274
 \end{verbatim}
 
 \hypertarget{writing-assignment-2}{%
@@ -3354,7 +3354,7 @@ The sample function is like an endless gumball machine. You put the gumballs ins
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] "A" "B" "B" "B" "A" "A" "B" "B" "A" "B"
+##  [1] "B" "A" "B" "B" "A" "A" "A" "A" "A" "B"
 \end{verbatim}
 
 Here the sample function randomly picks A or B each time. We set it do this 10 times, so our sample has 10 things in it. We set \texttt{replace=TRUE} so that after each sample, we put the item back into the gumball machine and start again. Here's another example with numbers
@@ -3368,7 +3368,7 @@ Here the sample function randomly picks A or B each time. We set it do this 10 t
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 5 5 3 3 5 5 5 5 5 2 5 5 5 3 5 4 5 5 5 5
+##  [1] 5 4 5 3 5 1 5 2 3 4 5 5 3 3 5 2 4 5 4 5
 \end{verbatim}
 
 Let's do one more thing with sample. Let's sample 1000 times from our \texttt{some\_numbers} variable, and then look at the histogram
@@ -3424,7 +3424,7 @@ For example, consider flipping a coin. It will be heads or tails, and the coin, 
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] 1 1 0 0 1 0 0 0 0 0
+##  [1] 0 1 0 1 0 0 1 1 0 1
 \end{verbatim}
 
 We get a bunch of 0s, and 1s. We can pretend 0 = tails, and 1 = heads. Great, now we can do coin flipping if we want. For example, if you flip 10 coins, how many heads do you get? We can can do the above again, and then \texttt{sum(coin\_flips)}. All the 1s are heads, so it will work out.
@@ -3437,7 +3437,7 @@ We get a bunch of 0s, and 1s. We can pretend 0 = tails, and 1 = heads. Great, no
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 7
+## [1] 6
 \end{verbatim}
 
 Alright, so we get the sum, which tells us the number of heads. But, should we always get that number of heads if we flipped a coin 10 times? If you keep redoing the above, you'll get different answers. 5 heads will be the most frequent answer, but you will get lots of other answers too.
@@ -3547,25 +3547,25 @@ Now, let's look at the means of the samples, we will use \texttt{dplyr} to get t
 \hline
 samples & means\\
 \hline
-1 & 0.2012258\\
+1 & -0.0094469\\
 \hline
-2 & -0.3105664\\
+2 & 0.0103895\\
 \hline
-3 & 0.0929245\\
+3 & -0.2545053\\
 \hline
-4 & 0.3464794\\
+4 & -0.5625936\\
 \hline
-5 & -0.0314834\\
+5 & -0.2030575\\
 \hline
-6 & -0.1836436\\
+6 & 0.1395671\\
 \hline
-7 & -0.0219857\\
+7 & 0.0317229\\
 \hline
-8 & -0.1698188\\
+8 & 0.3903963\\
 \hline
-9 & -0.0183713\\
+9 & -0.1385229\\
 \hline
-10 & 0.2618894\\
+10 & -0.2706910\\
 \hline
 \end{tabular}
 
@@ -3597,7 +3597,7 @@ Notice one more thing\ldots What is the mean of our 10 sample means? This is a m
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.01666498
+## [1] -0.08667414
 \end{verbatim}
 
 Well, that's pretty close to zero. Which is good. When we average over our samples, they better estimate the mean of the distribution they came from.
@@ -3891,7 +3891,7 @@ Here's a simple example, like what we said in the textbook. If you have a normal
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 58.1078
+## [1] 47.10798
 \end{verbatim}
 
 \begin{Shaded}
@@ -3901,7 +3901,7 @@ Here's a simple example, like what we said in the textbook. If you have a normal
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 21.13879
+## [1] 26.21189
 \end{verbatim}
 
 \begin{enumerate}
@@ -3920,10 +3920,10 @@ Here's a simple example, like what we said in the textbook. If you have a normal
 \end{Shaded}
 
 \begin{verbatim}
-##  [1]  25.0001098 -24.7924864  21.1356575 -17.8830639 -50.2147762  24.7430654
-##  [7]  14.3480173   4.4628384 -17.4801513  -0.9774595 -20.9416649  24.9907876
-## [13]  21.1481822 -16.7467868   4.1584647  -8.4527159 -15.6528866  20.1582438
-## [19]  -3.5647165  16.5613412
+##  [1]  24.5303262 -12.2568202  -0.8058029  -8.4858944 -17.0732248  34.2469379
+##  [7] -26.7178180 -13.2523732  -1.0062196 -55.8293847 -28.7378299  20.9417665
+## [13]  30.8808276  -2.1570137  17.6899539   3.6742940  19.1019938  54.3247126
+## [19] -11.4886996 -27.5797315
 \end{verbatim}
 
 \begin{enumerate}
@@ -3942,10 +3942,10 @@ Here's a simple example, like what we said in the textbook. If you have a normal
 \end{Shaded}
 
 \begin{verbatim}
-##  [1]  1.1826654 -1.1728435  0.9998520 -0.8459835 -2.3754806  1.1705055
-##  [7]  0.6787531  0.2111209 -0.8269232 -0.0462401 -0.9906749  1.1822244
-## [13]  1.0004445 -0.7922303  0.1967220 -0.3998676 -0.7404818  0.9536141
-## [19] -0.1686339  0.7834575
+##  [1]  0.93584731 -0.46760537 -0.03074188 -0.32374219 -0.65135422  1.30654213
+##  [7] -1.01930149 -0.50558634 -0.03838791 -2.12992599 -1.09636621  0.79894151
+## [13]  1.17812291 -0.08229142  0.67488282  0.14017662  0.72875303  2.07252181
+## [19] -0.43830109 -1.05218403
 \end{verbatim}
 
 Done. Now you have converted your original numbers into what we call standardized scores. They are standardized to have the same properties (assumed properties) as a normal distribution with mean = 0, and SD = 1.
@@ -4242,6 +4242,7 @@ Normal distribution might be the most important one of all, that is what we usua
 Unlike the distributions mentioned earlier, the bell curve is continuous, which means that values are not interrupted with gaps and a variable can take on any values between a given range. The bell curve is commonly used in statistics and is especially important when testing a hypothesis. An example of this is the curve that IQ follows across people.
 
 \includegraphics{img/ch4/4.5egiq.png}
+
 Picture from: (Wikipedia- \url{https://en.wikipedia.org/wiki/Intelligence_quotient})
 
 Here it can be seen that most people are located around the mean, which is 100, and fewer and fewer people have higher or lower scores. The bins with the highest and lowest scores contain only a tiny percentage of people.
@@ -4411,7 +4412,7 @@ We use the \texttt{min()} and \texttt{max()} functions to get the minimum and ma
 \end{Shaded}
 
 \begin{verbatim}
-## [1] -3.61203
+## [1] -3.120872
 \end{verbatim}
 
 \begin{Shaded}
@@ -4421,10 +4422,10 @@ We use the \texttt{min()} and \texttt{max()} functions to get the minimum and ma
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 3.952631
+## [1] 3.669098
 \end{verbatim}
 
-We now know, that biggest negative difference was -3.612, and the biggest positive difference was 3.953. We also know that any mean difference inside the range \textbf{was produced by chance} in our simulation, and any mean difference outside the range \textbf{was not produced by chance} in our simulation
+We now know, that biggest negative difference was -3.121, and the biggest positive difference was 3.669. We also know that any mean difference inside the range \textbf{was produced by chance} in our simulation, and any mean difference outside the range \textbf{was not produced by chance} in our simulation
 
 \hypertarget{make-inferences}{%
 \subsubsection{Make inferences}\label{make-inferences}}
@@ -4546,7 +4547,7 @@ The code starts out exactly as it was before. You should change the number for \
 \end{Shaded}
 
 \begin{verbatim}
-## [1] -4.052868
+## [1] -3.893954
 \end{verbatim}
 
 \begin{Shaded}
@@ -4556,7 +4557,7 @@ The code starts out exactly as it was before. You should change the number for \
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 4.952595
+## [1] 3.158434
 \end{verbatim}
 
 \hypertarget{crumping-real-data}{%
@@ -4684,7 +4685,7 @@ Now we can plug our numbers in to the Crump test simulation.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] -0.08683421
+## [1] -0.07369919
 \end{verbatim}
 
 \begin{Shaded}
@@ -4694,10 +4695,10 @@ Now we can plug our numbers in to the Crump test simulation.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.06666682
+## [1] 0.1072654
 \end{verbatim}
 
-According to the simulation, the biggest negative difference was -0.087, and the biggest positive difference was 0.067. We also know that any mean difference inside the range \textbf{was produced by chance} in our simulation, and any mean difference outside the range \textbf{was not produced by chance} in our simulation.
+According to the simulation, the biggest negative difference was -0.074, and the biggest positive difference was 0.107. We also know that any mean difference inside the range \textbf{was produced by chance} in our simulation, and any mean difference outside the range \textbf{was not produced by chance} in our simulation.
 
 A difference of .14 or 14\% was never produced by chance, it was completely outside the range. Based on this analysis we can be fairly confident that the test-enhanced learning effect was not a fluke, it was not produced by chance. We have evidence to support the claim that testing enhances learning, and because of this we test you while you are learning to enhance your learning while you learn.
 
@@ -4792,7 +4793,7 @@ Where is 5\% of the time on our histogram? What mean difference or greater happe
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 5.651936
+## [1] 6.229307
 \end{verbatim}
 
 \begin{Shaded}
@@ -4810,16 +4811,16 @@ Where is 5\% of the time on our histogram? What mean difference or greater happe
 
 \includegraphics{Statistics_Lab_files/figure-latex/unnamed-chunk-229-1.pdf}
 
-OK, so our alpha criterion or cutoff is located at 5.65 on the x-axis. This shows us that mean differences of 5.65 or larger happen only 5\% of the time by chance.
+OK, so our alpha criterion or cutoff is located at 6.23 on the x-axis. This shows us that mean differences of 6.23 or larger happen only 5\% of the time by chance.
 
 You could use this information to make an inference about whether or not chance produced the difference in your experiments
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  When the mean difference is 5.65 or larger, you might conclude that chance did not produce the difference
+  When the mean difference is 6.23 or larger, you might conclude that chance did not produce the difference
 \item
-  When the mean difference is less than 5.65, you might conclude that chance could have produced the mean difference.
+  When the mean difference is less than 6.23, you might conclude that chance could have produced the mean difference.
 \end{enumerate}
 
 It's up to you to set your alpha criterion. In practice it is often set at p=.05. But, you could be more conservative and set it to p=.01. Or more liberal and set it to p=.1. It's up to you.
