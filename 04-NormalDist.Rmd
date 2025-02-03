@@ -770,7 +770,7 @@ The sampling distribution of the mean refers to a distribution obtained from mul
 knitr::include_graphics('img/ch4/4.6samplemeans.png')
 ```
 
-The dataset “4.7_sdm” contains means of generated, normally distributed samples of ten, with a mean of zero and a standard deviation of one in the second coloumn. All these means come from the same normal distribution, but many of them are quite different from each other. This is because of random sampling error, random chance makes each sample a little bit different (e.g., you don’t always get five heads and five tails when you flip a coin). Open from demo data the file “4.7_sdm” and run an “Explore variable” analysis on the “sample_means” variable.
+The dataset “4.7_sdm” contains means of generated, normally distributed samples of ten, with a mean of zero and a standard deviation of one in the second coloumn. All these means come from the same normal distribution, but many of them are quite different from each other. This is because of random sampling error, random chance makes each sample a little bit different (e.g., you don’t always get five heads and five tails when you flip a coin). Open the file “4.7_sdm” from demo data and run an “Explore variable” analysis on the “sample_means” variable.
 
 ```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch4/4.6expvarsamplemeansRAW.png')
