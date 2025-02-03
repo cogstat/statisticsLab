@@ -541,6 +541,7 @@ In CogStat, to look at the relations between the variables “Freedom to make li
 ```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch3/variablepair.png')
 ```
+
 or
 
 ```{r , echo=FALSE,dev='png'}
