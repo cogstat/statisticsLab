@@ -488,7 +488,7 @@ In this section data from the gapminder project will be used, so first of all, l
 
 - Understand the importance of descriptives
 
--Run descriptive statistics
+- Run descriptive statistics
 
 ### Statistical measurements to describe the data
 
