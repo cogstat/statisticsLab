@@ -549,7 +549,7 @@ knitr::include_graphics('img/ch2/compareg2.png')
 knitr::include_graphics('img/ch2/comparewindow.png')
 ```
 
-After this dialogue appears, select “lifeExp” as Dependent variable(s) and “continent” as “Group(s)”, as we want to know all the continents' life expectancies separately.
+After this dialogue appears, select “lifeExp” as "Dependent variable(s)" and “continent” as “Group(s)”, as we want to know all the continents' life expectancies separately.
 
 In the Sample Properties part of the output, all the descriptives for the groups are provided, which lets us make comparisons about the data. 
 
