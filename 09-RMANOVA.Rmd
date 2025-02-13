@@ -674,7 +674,7 @@ Let’s take some time to think about this data. We have measurements taken from
 
 ### One-Factor Repeated Measures ANOVA
 
-To calculate a One-Factor Repeated Measures ANOVA, choose Compare repeated measures variables and groups (Ctrl+M). In this section, we will use the same dataset “BehmerCrumpMeanRTs”. 
+To calculate a One-Factor Repeated Measures ANOVA, choose Compare repeated measures variables and groups (Ctrl+M). In this section, we will use the dataset “BehmerCrumpMeanRTs”. 
 
 ```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch9/9.4CRMVAG_icon.png')
