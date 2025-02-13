@@ -581,7 +581,7 @@ We generate the random numbers in spreadsheet software (here, in Excel), which y
 
 It is important that in spreadsheets we can also set the measurement level for the variables in a second row, which makes our work in CogStat easier. Now we can compute the means of both A and B groups. After loading the data in CogStat, choose “Analysis'' then “Explore variable…” and select both variables from “Available variables” as  “Selected variables” and press "OK ". 
 
-In the “Descriptives for the variable” table, we can see, among several descriptive values, that the mean for Group A is 76.2.  For Group B, the mean is 75.2.
+In the “Descriptives for the variable” table, we can see, among several descriptive values, that the mean for Group A is around 78. For Group B, the mean is 74. Keep in mind that you might see different values, as the randomly generated numbers in Excel regenerate from time to time.
 
 ```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch5/5.3.2groupAdescr.png')
