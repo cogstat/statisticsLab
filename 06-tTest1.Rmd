@@ -809,7 +809,7 @@ or
 knitr::include_graphics('img/ch6/6.7comparerepeatedmeasures_menu.png')
 ```
 
-Select the variables “Test_Proportion_Gaze_to_Singer” and Baseline_Proportion_Gaze_to_Singer” for the analysis, and then press"OK ". 
+Select the variables “Test_Proportion_Gaze_to_Singer” and "Baseline_Proportion_Gaze_to_Singer” for the analysis, and then press"OK ". 
 
 ```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch6/6.7comparerepeatedmeasures_window.png')
