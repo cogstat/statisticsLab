@@ -867,7 +867,7 @@ We can take a look at this in practice if we analyse the variable “Difference_
 knitr::include_graphics('img/ch6/6.8expvar_window.png')
 ```
 
-You will see that the t-statistic and p-value are identical to the ones obtained when we conducted a paired-samples t-test on the same data (in Chapter 6.7). Therefore, a paired-samples t-test conducted on two samples is equivalent to a one-sample t-test run on the difference scores (calculated on the two samples) compared against 0.
+You will see that the t-statistic and p-value are identical to the ones obtained when we conducted a paired-samples t-test on the same data previously. Therefore, a paired-samples t-test conducted on two samples is equivalent to a one-sample t-test run on the difference scores (calculated on the two samples) compared against 0.
 
 ```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch6/6.8expvar_hyptest.png')
