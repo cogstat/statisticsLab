@@ -591,7 +591,7 @@ knitr::include_graphics('img/ch5/5.3.2groupAdescr.png')
 knitr::include_graphics('img/ch5/5.3.2groupBdescr.png')
 ```
 
-Take a minute to look at the difference of the means. 76.2-75.2= the mean difference is 1. We could do the whole process from the beginning more times to make comparisons if we would like to follow the Crump test’s philosophy. For now, it is enough to realise that if we generate random numbers for groups and compare these groups’ mean we will easily see the difference chance can produce. 
+Take a minute to look at the difference of the means. 78-74= the mean difference is 4. We could do the whole process from the beginning more times to make comparisons if we would like to follow the Crump test’s philosophy. For now, it is enough to realise that if we generate random numbers for groups and compare these groups’ mean we will easily see the difference chance can produce. 
 
 #### Making inferences
 
