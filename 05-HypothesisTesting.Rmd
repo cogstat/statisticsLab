@@ -629,7 +629,7 @@ The paper says there were 120 subjects in total, and that different groups of su
 
 ###### Estimating standard deviation
 
-The paper does not directly report the standard deviation for measuring proportion idea units. But, we can estimate it visually and take a guess this time. Look at the little bars with a line on them coming out of each bar. These are called error bars, and they represent the standard error of the mean.
+The paper does not directly report the standard deviation for measuring proportion idea units. But, we can estimate it visually and take a guess this time. Look at the little bars with a line on them coming out of each bar (see picture in 5.5.3.3.1 - Test-enhanced learning). These are called error bars, and they represent the standard error of the mean.
 
 These look like they are about 0.033 in length. We know the standard error of the mean (SEM) is the standard deviation divided by the square root of N. So, we can infer that the standard deviation is 0.033∗√40=0.21. The paper also reports Cohen’s D, which is a measure of effect size using the mean difference divided by the standard deviation. Cohen’s D was 0.83, so the standard deviation must have been 0.14/0.83=0.168, which is pretty close to our guess of 0.21.
 
