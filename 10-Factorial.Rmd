@@ -792,11 +792,11 @@ knitr::include_graphics('img/ch10/10.3comparegroups_hyptest.png')
 
 This last section gives us the answer to our questions: 
 
-1. There is no main effect of posture, F(1, 196)=2.45, p=0.119 (it is not significant)
+1. There is no main effect of posture, F(1, 196)=2.45, p=0.119 (it is not significant).
 
 2. There is a main effect of congruency, F(1, 196)=43.76, p<0.001 where (from looking at the plot) incongruent stimuli were processed with a longer reaction time than congruent stimuli.
 
-3. There is no interaction between posture and congruency, F(1, 196)=0.49, p=0.484 (it is not significant)
+3. There is no interaction between posture and congruency, F(1, 196)=0.49, p=0.484 (it is not significant).
 
 ### CogStat: Display options…
 
