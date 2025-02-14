@@ -434,7 +434,7 @@ The last section of Population parameters is the hypothesis test, which shows th
 knitr::include_graphics('img/ch11/11.3CRMVG_hyptest.png')
 ```
 
-You might notice that in this analysis there were not any assumptions tested or post-hoc tests run as before in previous ANOVA analyses, it is because these functions are not implemented yet, in the current CogStat package. (CogStat2.5_rc)
+You might notice that in this analysis there were not any assumptions tested or post-hoc tests run as before in previous ANOVA analyses, it is because these functions are not implemented yet, in the current CogStat package (CogStat2.5_rc).
 
 ### REFERENCES
 
