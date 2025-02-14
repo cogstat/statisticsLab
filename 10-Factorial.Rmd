@@ -812,7 +812,7 @@ After choosing “Display options…” you get some opportunities to change how
 knitr::include_graphics('img/ch10/10.4displayoption_window.png')
 ```
 
-You can set the minimum and maximum values of axis Y. You can choose some or all the variables to be displayed in different colours. Choose the variables you would like to colour as “Group(s) displayed with colours and hit “OK”. Each factor will be colored differently in the graphs. 
+You can set the minimum and maximum values of axis Y. You can choose some or all the variables to be displayed in different colours. Choose the variables you would like to colour as “Group(s) displayed with colours" and hit “OK”. Each factor will be colored differently in the graphs. 
 
 ```{r , echo=FALSE,dev='png'}
 knitr::include_graphics('img/ch10/10.4display_plot.png')
